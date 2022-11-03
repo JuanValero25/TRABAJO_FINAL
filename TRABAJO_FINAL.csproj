@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{35606092-1068-4E5B-9D61-12B28173BB53}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TRABAJO_FINAL</RootNamespace>
+    <AssemblyName>TRABAJO_FINAL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlumnoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlumnoForm.Designer.cs">
+      <DependentUpon>AlumnoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CursosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CursosForm.Designer.cs">
+      <DependentUpon>CursosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialForm.Designer.cs">
+      <DependentUpon>InitialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MateriaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MateriaForm.Designer.cs">
+      <DependentUpon>MateriaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PagosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagosForm.Designer.cs">
+      <DependentUpon>PagosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfesoresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfesoresForm.Designer.cs">
+      <DependentUpon>ProfesoresForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AlumnoForm.resx">
+      <DependentUpon>AlumnoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CursosForm.resx">
+      <DependentUpon>CursosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialForm.resx">
+      <DependentUpon>InitialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MateriaForm.resx">
+      <DependentUpon>MateriaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagosForm.resx">
+      <DependentUpon>PagosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfesoresForm.resx">
+      <DependentUpon>ProfesoresForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Abstraction\Abstraction.csproj">
+      <Project>{04d919b9-3c39-4f9f-aa1b-b7fd31dc5c1c}</Project>
+      <Name>Abstraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BE\BE.csproj">
+      <Project>{4ed02615-2037-49d6-89f7-d62c124c8590}</Project>
+      <Name>BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{9cd20745-7446-4abd-9502-5fcac4921143}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
