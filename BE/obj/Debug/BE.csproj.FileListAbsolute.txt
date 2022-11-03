@@ -1,0 +1,11 @@
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\BE\bin\Debug\BE.dll
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\BE\bin\Debug\BE.pdb
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\BE\bin\Debug\Abstraction.dll
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\BE\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\BE\bin\Debug\Abstraction.pdb
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\BE\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\BE\obj\Debug\BE.csproj.CopyComplete
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\BE\obj\Debug\BE.dll
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\BE\obj\Debug\BE.pdb

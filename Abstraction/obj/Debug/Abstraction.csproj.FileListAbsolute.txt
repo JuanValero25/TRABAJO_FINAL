@@ -1,0 +1,11 @@
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\Abstraction\obj\Debug\Abstraction.csproj.AssemblyReference.cache
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\Abstraction\obj\Debug\Abstraction.csproj.CoreCompileInputs.cache
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\Abstraction\bin\Debug\Abstraction.dll
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\Abstraction\bin\Debug\Abstraction.pdb
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\Abstraction\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\Abstraction\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\Abstraction\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\Abstraction\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\Abstraction\obj\Debug\Abstraction.csproj.CopyComplete
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\Abstraction\obj\Debug\Abstraction.dll
+C:\Users\skate\Documents\uai\TRABAJO FINAL\codigo\Abstraction\obj\Debug\Abstraction.pdb
