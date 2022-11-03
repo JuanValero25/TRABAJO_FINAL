@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Abstraction/obj/*
+/BE/obj/*
+/BLL/obj/*
+/MPP/obj/*
+
+/Abstraction/bin/*
+/BE/bin/*
+/BLL/bin/*
+/MPP/bin/*
+
