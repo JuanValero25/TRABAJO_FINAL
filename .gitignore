@@ -1,0 +1,25 @@
+﻿/BLL/obj/Debug/.NETFramework,Version=v4.7.2.AssemblyAttributes.cs
+/.vs
+/Abstraction/obj/*
+/BE/obj/*
+/BLL/obj/*
+/MPP/obj/*
+
+/Abstraction/bin/*
+/BE/bin/*
+/BLL/bin/*
+/MPP/bin/*
+
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/contentModel.xml
+/.idea.TRABAJO_FINAL.iml
+/projectSettingsUpdater.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
