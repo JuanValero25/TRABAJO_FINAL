@@ -33,5 +33,18 @@ namespace TRABAJO_FINAL
             this.Size = cursosForm.Size;
             cursosForm.Show();
         }
+
+        private void materiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            MateriaForm materiaForm = new MateriaForm();
+            materiaForm.MdiParent = this;
+            this.Size = materiaForm.Size;
+            materiaForm.Show();
+        }
     }
 }

@@ -33,6 +33,7 @@ namespace TRABAJO_FINAL
             this.alumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profesoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,12 +42,14 @@ namespace TRABAJO_FINAL
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.alumnosToolStripMenuItem,
             this.cursosToolStripMenuItem,
-            this.profesoresToolStripMenuItem});
+            this.profesoresToolStripMenuItem,
+            this.materiaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // alumnosToolStripMenuItem
             // 
@@ -68,6 +71,13 @@ namespace TRABAJO_FINAL
             this.profesoresToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.profesoresToolStripMenuItem.Text = "Profesores";
             this.profesoresToolStripMenuItem.Click += new System.EventHandler(this.profesoresToolStripMenuItem_Click);
+            // 
+            // materiaToolStripMenuItem
+            // 
+            this.materiaToolStripMenuItem.Name = "materiaToolStripMenuItem";
+            this.materiaToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.materiaToolStripMenuItem.Text = "Materia";
+            this.materiaToolStripMenuItem.Click += new System.EventHandler(this.materiaToolStripMenuItem_Click);
             // 
             // InitialForm
             // 
@@ -92,6 +102,7 @@ namespace TRABAJO_FINAL
         private System.Windows.Forms.ToolStripMenuItem alumnosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem profesoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem materiaToolStripMenuItem;
     }
 }
 

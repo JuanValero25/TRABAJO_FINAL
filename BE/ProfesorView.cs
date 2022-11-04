@@ -20,5 +20,10 @@ namespace BE
         public ProfesorView()
         {
         }
+
+        public override string ToString()
+        {
+            return ID + " - " + nombre_apellido;
+        }
     }
 }

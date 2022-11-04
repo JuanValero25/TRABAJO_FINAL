@@ -14,6 +14,9 @@ namespace BE
 
         public List<string> ProfesoresID { get; set; }
 
+        public DateTime fechaInicio { get; set; }
+        public DateTime fechaFinalizacion { get; set; }
+
         public Decimal Precio { get; set; }
     }
 }

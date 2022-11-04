@@ -46,7 +46,6 @@
     <Compile Include="MateriaXMLMPP.cs" />
     <Compile Include="ProfesorXMLMPP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="testGit.cs" />
     <Compile Include="XMLReflectionParser.cs" />
   </ItemGroup>
   <ItemGroup>

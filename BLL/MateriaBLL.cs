@@ -19,6 +19,10 @@ namespace BLL
 
         }
 
+        public Materia Get(string ID) {
+            return mpp.Get(ID);
+        }
+
         public List<Materia> getAllMaterias() {
 
             return mpp.GetAll();
