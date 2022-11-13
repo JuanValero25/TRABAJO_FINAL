@@ -1,11 +1,5 @@
-﻿using Abstraction;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace MPP
 {
@@ -18,9 +12,9 @@ namespace MPP
         public void TestMethod1()
         {
             var asd = "asd";
-            Console.WriteLine("algo"+asd);
+            Console.WriteLine("algo" + asd);
         }
     }
 
-    
+
 }

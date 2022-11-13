@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using BE;
+using BLL;
+using Servicios;
+using System;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BE;
-using BLL;
 
 namespace TRABAJO_FINAL
 {
@@ -20,16 +17,39 @@ namespace TRABAJO_FINAL
 
 
 
-        public MateriaForm()
+        public MateriaForm(Role role)
         {
             InitializeComponent();
+            renderByRole(role);
+        }
+
+        private void renderByRole(Role role)
+        {
+            var Accessos = role.ObtenerHijos().Where(h => h.name.Equals("MATERIAS"));
+
+
+            foreach (Permiso p in Accessos.First().ObtenerHijos())
+            {
+                switch (p.name)
+                {
+                    case "AGREGAR_MODIFICAR":
+                        AgregarButton.Enabled = true;
+                        break;
+                    case "ELIMINAR":
+                        EliminarButton.Enabled = true;
+                        break;
+                    case "LISTAR":
+                        ListarButon.Enabled = true;
+                        break;
+                }
+            }
         }
 
         private void AgregarButton_Click(object sender, EventArgs e)
         {
 
             var materia = new Materia();
-       
+
             if (materiaSelecionada != null)
             {
                 this.materiaSelecionada.Nombre = NombreText.Text;

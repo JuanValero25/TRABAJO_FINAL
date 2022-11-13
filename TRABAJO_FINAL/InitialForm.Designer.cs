@@ -32,10 +32,10 @@ namespace TRABAJO_FINAL
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.alumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.profesoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.materiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administracionDeCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inscripcionCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.profesoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,7 @@ namespace TRABAJO_FINAL
             // 
             // alumnosToolStripMenuItem
             // 
+            this.alumnosToolStripMenuItem.Enabled = false;
             this.alumnosToolStripMenuItem.Name = "alumnosToolStripMenuItem";
             this.alumnosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.alumnosToolStripMenuItem.Text = "Alumnos";
@@ -64,24 +65,11 @@ namespace TRABAJO_FINAL
             this.cursosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.administracionDeCursosToolStripMenuItem,
             this.inscripcionCursoToolStripMenuItem});
+            this.cursosToolStripMenuItem.Enabled = false;
             this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
             this.cursosToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.cursosToolStripMenuItem.Text = "Cursos";
             this.cursosToolStripMenuItem.Click += new System.EventHandler(this.cursosToolStripMenuItem_Click);
-            // 
-            // profesoresToolStripMenuItem
-            // 
-            this.profesoresToolStripMenuItem.Name = "profesoresToolStripMenuItem";
-            this.profesoresToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
-            this.profesoresToolStripMenuItem.Text = "Profesores";
-            this.profesoresToolStripMenuItem.Click += new System.EventHandler(this.profesoresToolStripMenuItem_Click);
-            // 
-            // materiaToolStripMenuItem
-            // 
-            this.materiaToolStripMenuItem.Name = "materiaToolStripMenuItem";
-            this.materiaToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.materiaToolStripMenuItem.Text = "Materia";
-            this.materiaToolStripMenuItem.Click += new System.EventHandler(this.materiaToolStripMenuItem_Click);
             // 
             // administracionDeCursosToolStripMenuItem
             // 
@@ -95,6 +83,22 @@ namespace TRABAJO_FINAL
             this.inscripcionCursoToolStripMenuItem.Name = "inscripcionCursoToolStripMenuItem";
             this.inscripcionCursoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.inscripcionCursoToolStripMenuItem.Text = "Inscripcion curso";
+            // 
+            // profesoresToolStripMenuItem
+            // 
+            this.profesoresToolStripMenuItem.Enabled = false;
+            this.profesoresToolStripMenuItem.Name = "profesoresToolStripMenuItem";
+            this.profesoresToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.profesoresToolStripMenuItem.Text = "Profesores";
+            this.profesoresToolStripMenuItem.Click += new System.EventHandler(this.profesoresToolStripMenuItem_Click);
+            // 
+            // materiaToolStripMenuItem
+            // 
+            this.materiaToolStripMenuItem.Enabled = false;
+            this.materiaToolStripMenuItem.Name = "materiaToolStripMenuItem";
+            this.materiaToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.materiaToolStripMenuItem.Text = "Materia";
+            this.materiaToolStripMenuItem.Click += new System.EventHandler(this.materiaToolStripMenuItem_Click);
             // 
             // InitialForm
             // 

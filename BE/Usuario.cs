@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BE
+﻿namespace BE
 {
-    public class Usuario
+    public class Usuario : Entidad
     {
-        public string DNI;
-        public string password;
+        public string DNI { get; set; }
+        public string password { get; set; }
 
-        public List<string>
+        public string Role { get; set; }
 
 
     }

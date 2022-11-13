@@ -70,9 +70,11 @@ namespace MPP
 
         }
 
-        private XElement objectToXElement(string fieldName, object value) {
+        private XElement objectToXElement(string fieldName, object value)
+        {
 
-            if (value == null) {
+            if (value == null)
+            {
                 return new XElement(fieldName, "");
             }
 
@@ -84,9 +86,10 @@ namespace MPP
                 case "List`1":
 
                     var ListValue = (IEnumerable)value;
-                    var listaDelElementos =new  List<XElement>();
+                    var listaDelElementos = new List<XElement>();
 
-                    foreach (var val in ListValue) {
+                    foreach (var val in ListValue)
+                    {
                         listaDelElementos.Add(new XElement("ID", val));
                     }
 
@@ -140,6 +143,12 @@ namespace MPP
             var listValue = consulta.Elements();
             T instance = Activator.CreateInstance<T>();
 
+
+            if (listValue.Count() == 0)
+            {
+                return instance;
+            }
+
             foreach (PropertyInfo field in instance.GetType().GetProperties())
             {
                 var xmlElement = listValue.Where(p => p.Name.LocalName.Equals(field.Name)).First();
@@ -155,7 +164,7 @@ namespace MPP
         private void setValue(T instance, string fieldName, XElement value)
         {
             var reflectedProerty = instance.GetType().GetProperty(fieldName);
-            
+
             switch (reflectedProerty.PropertyType.Name)
             {
 
@@ -191,15 +200,17 @@ namespace MPP
         public List<T> GetAll()
         {
             IEnumerable<XElement> consulta = null;
-            try {
+            try
+            {
                 consulta = from usuario in XElement.Load(fileName).Descendants(Unit)
                            select usuario;
             }
-            catch (FileNotFoundException ex) {
+            catch (FileNotFoundException ex)
+            {
                 MessageBox.Show("no existe ningun objecto o no existe el archivo : " + fileName);
                 return Activator.CreateInstance<List<T>>();
             }
-   
+
 
             var listValue = consulta.Elements();
 
@@ -221,12 +232,14 @@ namespace MPP
 
         }
 
-        public void SetListValue(T t, string propertyName, XElement listElement) {
+        public void SetListValue(T t, string propertyName, XElement listElement)
+        {
             var property = t.GetType().GetProperty(propertyName);
             var ListValue = (IList)Activator.CreateInstance(property.PropertyType);
 
 
-            foreach (var elements in listElement.Elements()) {
+            foreach (var elements in listElement.Elements())
+            {
                 ListValue.Add(elements.Value);
             }
 

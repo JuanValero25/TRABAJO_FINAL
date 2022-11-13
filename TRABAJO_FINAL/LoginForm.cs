@@ -1,20 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BLL;
+using Servicios;
+using System;
 using System.Windows.Forms;
 
 namespace TRABAJO_FINAL
 {
     public partial class LoginForm : Form
     {
-        public LoginForm()
+
+        private UsuarioBLL userBll = new UsuarioBLL();
+        private InitialForm initForm;
+
+        public LoginForm(InitialForm initForm)
         {
             InitializeComponent();
+            this.initForm = initForm;
+        }
+
+        private void LogingButton_Click(object sender, EventArgs e)
+        {
+            var dni = DniTextBox.Text;
+            var password = EncryptionService.EncryptString(PasswordTextBox.Text);
+
+            var user = userBll.GetUsuarioByDNIAndPassword(dni, password);
+
+            if (user == null)
+            {
+                MessageBox.Show("Usuario invalido");
+                return;
+            }
+
+
+
+            this.initForm.EnableMenuToolTips();
+
+
         }
     }
 }

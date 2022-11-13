@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BE;
+﻿using BE;
 
 namespace MPP
 {
-    public class CursosXMLMPP: XMLReflectionParser<Curso>
+    public class CursosXMLMPP : XMLReflectionParser<Curso>
     {
 
 

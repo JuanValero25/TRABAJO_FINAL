@@ -1,17 +1,12 @@
 ﻿using BE;
 using BLL;
+using Servicios;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using System.Xml.Serialization;
 
 namespace TRABAJO_FINAL
 {
@@ -23,22 +18,49 @@ namespace TRABAJO_FINAL
 
         private Curso cursoSelecionado = new Curso();
 
-        public CursosForm()
+        public CursosForm(Role role)
         {
             InitializeComponent();
             initProfesrList();
             initMaterias();
+            renderByRole(role);
         }
 
-        public void initProfesrList() {
+        private void renderByRole(Role role)
+        {
+            var Accessos = role.ObtenerHijos().Where(h => h.name.Equals("CURSOS"));
+
+
+            foreach (Permiso p in Accessos.First().ObtenerHijos())
+            {
+
+                switch (p.name)
+                {
+                    case "AGREGAR_MODIFICAR":
+                        AgregarButton.Enabled = true;
+                        break;
+                    case "ELIMINAR":
+                        EliminarButton.Enabled = true;
+                        break;
+                    case "LISTAR":
+                        ListarTodoButton.Enabled = true;
+                        break;
+                }
+            }
+
+        }
+
+        public void initProfesrList()
+        {
             var profesorList = profesorBLL.getAll().Select(p => p.ToView()).ToList();
             this.ProfesorList.Items.AddRange(profesorList.ToArray());
         }
 
-        public void initMaterias() {
-            var materiasList = materiaBLL.getAllMaterias().Select(m=>m.toView()).ToArray();
+        public void initMaterias()
+        {
+            var materiasList = materiaBLL.getAllMaterias().Select(m => m.toView()).ToArray();
             this.MateriaCombo.Items.AddRange(materiasList);
-        
+
         }
 
         private void AgregarButton_Click(object sender, EventArgs e)
@@ -55,19 +77,20 @@ namespace TRABAJO_FINAL
 
 
                 var empEnumerator = ProfesorList.CheckedItems.GetEnumerator();
-               
-                    if (cursoSelecionado.ProfesoresID == null) {
-                        cursoSelecionado.ProfesoresID = new List<string>();
 
-                    }
+                if (cursoSelecionado.ProfesoresID == null)
+                {
+                    cursoSelecionado.ProfesoresID = new List<string>();
 
-                    while (empEnumerator.MoveNext())
-                    {
-                        
-                        ProfesorView emp = (ProfesorView)empEnumerator.Current;
-                        cursoSelecionado.ProfesoresID.Add(emp.ID);
-                    }
-                
+                }
+
+                while (empEnumerator.MoveNext())
+                {
+
+                    ProfesorView emp = (ProfesorView)empEnumerator.Current;
+                    cursoSelecionado.ProfesoresID.Add(emp.ID);
+                }
+
 
 
                 cursoSelecionado.fechaInicio = InicioDate.Value;
@@ -117,7 +140,7 @@ namespace TRABAJO_FINAL
 
         private void ListarTodoButton_Click(object sender, EventArgs e)
         {
-            var usuariList = this.cursoBLL.GetAll() ;
+            var usuariList = this.cursoBLL.GetAll();
 
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = usuariList;
@@ -148,9 +171,10 @@ namespace TRABAJO_FINAL
                 {
                     counter++;
                     ProfesorView emp = empEnumerator.Current;
-                    if (this.cursoSelecionado.ProfesoresID.Select(id => id.Equals(emp.ID)).ToList().Count>0) {
+                    if (this.cursoSelecionado.ProfesoresID.Select(id => id.Equals(emp.ID)).ToList().Count > 0)
+                    {
                         ProfesorList.SetItemChecked(counter, true);
-                    } ;
+                    };
                 }
             }
 

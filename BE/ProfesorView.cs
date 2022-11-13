@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BE
+﻿namespace BE
 {
-   public class ProfesorView
+    public class ProfesorView
     {
         public string ID { get; set; }
         public string nombre_apellido { get; set; }

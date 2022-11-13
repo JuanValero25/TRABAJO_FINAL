@@ -1,9 +1,5 @@
 ﻿using Abstraction;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios
 {
@@ -15,7 +11,7 @@ namespace Servicios
 
         public override void agregarHijo(Componente c)
         {
-         // como permiso no tiene hijos 
+            // como permiso no tiene hijos 
         }
 
         public override List<Componente> ObtenerHijos()

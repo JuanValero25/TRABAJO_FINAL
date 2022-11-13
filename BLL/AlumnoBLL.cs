@@ -1,10 +1,6 @@
 ﻿using BE;
 using MPP;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL
 {
@@ -22,15 +18,18 @@ namespace BLL
 
         }
 
-        public Alumno getAlumno(string ID) {
+        public Alumno getAlumno(string ID)
+        {
             return alumnoXMLMPP.Get(ID);
         }
 
-        public void borrarAlumno(Alumno alumno) {
+        public void borrarAlumno(Alumno alumno)
+        {
             alumnoXMLMPP.Delete(alumno);
         }
 
-        public List<Alumno> GetAll() {
+        public List<Alumno> GetAll()
+        {
 
             return this.alumnoXMLMPP.GetAll();
         }

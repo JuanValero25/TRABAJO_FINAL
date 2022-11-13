@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Abstraction
 {
-   public abstract class Componente
+    public abstract class Componente
     {
         public string name { get; set; }
 
@@ -16,7 +12,7 @@ namespace Abstraction
         }
 
         public Componente()
-        
+
         {
         }
 

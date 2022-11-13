@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios
 {
     public class EncryptionService
     {
-        private static string key = "juan_valero_95566355$uai"; 
+        private static string key = "juan_valero_95566355$uai";
 
         public static string EncryptString(string plainText)
         {

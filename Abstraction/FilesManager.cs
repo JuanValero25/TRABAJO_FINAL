@@ -1,10 +1,4 @@
 ﻿using Abstraction;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace MPP
 {
@@ -12,7 +6,8 @@ namespace MPP
     {
 
 
-        public FileResponse CreateFileFromEntity(IEntidad entidad) {
+        public FileResponse CreateFileFromEntity(IEntidad entidad)
+        {
             /*
             XDocument xmlDoc = XDocument.Load("usuarios.xml");
             var element = xmlDoc.Element("Usuarios");

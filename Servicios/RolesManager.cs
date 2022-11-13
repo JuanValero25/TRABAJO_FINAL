@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios
 {
@@ -13,8 +10,11 @@ namespace Servicios
 
         private List<Role> Roles = new List<Role>();
 
+        private Role currentRole;
 
-        private RolesManager() {
+
+        private RolesManager()
+        {
 
             var agregarYmodificar = new Permiso("AGREGAR_MODIFICAR");
             var Eliminar = new Permiso("ELIMINAR");
@@ -76,11 +76,6 @@ namespace Servicios
             // permisos para Pagos Admin
             var PagosAccesoAdmin = new Acceso("PAGOS");
             PagosAccesoAdmin.agregarHijo(agregarYmodificar);
-            PagosAccesoAdmin.agregarHijo(Listar);
-
-            // Permisos para Client de la vista de Pagos
-            var PagosAccesoClient = new Acceso("PAGOS");
-            PagosAccesoClient.agregarHijo(Listar);
 
             // permisos para Login Admin
             var LoginAccesoAdmin = new Acceso("LOGIN");
@@ -110,20 +105,19 @@ namespace Servicios
             ClientRole.agregarHijo(ProfesorAccesoClient);
             ClientRole.agregarHijo(CursoAlumnoAccesoClient);
             ClientRole.agregarHijo(MateriasAccesoClient);
-            ClientRole.agregarHijo(PagosAccesoClient);
             ClientRole.agregarHijo(LoginAccesoClient);
             ClientRole.agregarHijo(CursosAccesoClient);
 
             Roles.Add(AdminRole);
             Roles.Add(ClientRole);
 
-
-
         }
 
-        public static RolesManager getInstance() {
+        public static RolesManager getInstance()
+        {
 
-            if (instance == null) {
+            if (instance == null)
+            {
 
                 instance = new RolesManager();
             }
@@ -131,9 +125,19 @@ namespace Servicios
             return instance;
         }
 
-        public Role GetRoleByName(string roleName) {
-           return  this.Roles.Where(r => r.name.Equals(roleName)).First();
+        public Role GetRoleByName(string roleName)
+        {
+            return this.Roles.Where(r => r.name.Equals(roleName)).First();
         }
 
+        public Role GetCurrentRole()
+        {
+            return this.currentRole;
+        }
+
+        public void SetRolebyName(string roleName)
+        {
+            this.currentRole = GetRoleByName(roleName);
+        }
     }
 }

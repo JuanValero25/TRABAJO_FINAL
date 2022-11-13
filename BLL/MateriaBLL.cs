@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BE;
 using MPP;
-using BE;
+using System.Collections.Generic;
 namespace BLL
 {
     public class MateriaBLL
@@ -13,22 +9,26 @@ namespace BLL
         MateriaXMLMPP mpp = new MateriaXMLMPP();
 
 
-        public void SaveMateria(Materia materia) {
+        public void SaveMateria(Materia materia)
+        {
             mpp.Save(materia);
 
 
         }
 
-        public Materia Get(string ID) {
+        public Materia Get(string ID)
+        {
             return mpp.Get(ID);
         }
 
-        public List<Materia> getAllMaterias() {
+        public List<Materia> getAllMaterias()
+        {
 
             return mpp.GetAll();
         }
 
-        public void EliminarMateria(Materia materia) {
+        public void EliminarMateria(Materia materia)
+        {
 
             mpp.Delete(materia);
         }
