@@ -58,11 +58,23 @@
     <Compile Include="CursosForm.Designer.cs">
       <DependentUpon>CursosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cursos_alumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cursos_alumnos.Designer.cs">
+      <DependentUpon>Cursos_alumnos.cs</DependentUpon>
+    </Compile>
     <Compile Include="InitialForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InitialForm.Designer.cs">
       <DependentUpon>InitialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MateriaForm.cs">
       <SubType>Form</SubType>
@@ -90,8 +102,14 @@
     <EmbeddedResource Include="CursosForm.resx">
       <DependentUpon>CursosForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cursos_alumnos.resx">
+      <DependentUpon>Cursos_alumnos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InitialForm.resx">
       <DependentUpon>InitialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MateriaForm.resx">
       <DependentUpon>MateriaForm.cs</DependentUpon>

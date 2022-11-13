@@ -1,10 +1,12 @@
 ﻿using Abstraction;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace MPP
@@ -48,7 +50,7 @@ namespace MPP
                 {
                     var value = ObjectToParse.GetType().GetProperty(field.Name).GetValue(ObjectToParse, null);
 
-                    var singleField = new XElement(field.Name, value);
+                    var singleField = objectToXElement(field.Name, value);
                     FieldSValue.Add(singleField);
 
                 }
@@ -66,6 +68,35 @@ namespace MPP
                 throw ex;
             }
 
+        }
+
+        private XElement objectToXElement(string fieldName, object value) {
+
+            if (value == null) {
+                return new XElement(fieldName, "");
+            }
+
+
+            var reflectedProerty = value.GetType();
+
+            switch (reflectedProerty.Name)
+            {
+                case "List`1":
+
+                    var ListValue = (IEnumerable)value;
+                    var listaDelElementos =new  List<XElement>();
+
+                    foreach (var val in ListValue) {
+                        listaDelElementos.Add(new XElement("ID", val));
+                    }
+
+                    return new XElement(fieldName, listaDelElementos.ToArray());
+                    break;
+                default:
+                    return new XElement(fieldName, value);
+                    break;
+
+            }
         }
 
         public void Delete(IEntidad ObjectToParse)
@@ -91,19 +122,28 @@ namespace MPP
         public T Get(string ID)
         {
 
-
-            var consulta = from usuario in XElement.Load(fileName).Descendants(Unit)
+            IEnumerable<XElement> consulta = null;
+            try
+            {
+                consulta = from usuario in XElement.Load(fileName).Descendants(Unit)
                            where usuario.Element("ID").Value.Equals(ID)
                            select usuario;
+            }
+            catch (FileNotFoundException ex)
+            {
+                MessageBox.Show("no existe ningun objecto o no existe el archivo : " + fileName);
+                return Activator.CreateInstance<T>();
+            }
+
+
 
             var listValue = consulta.Elements();
             T instance = Activator.CreateInstance<T>();
-            var nombre = listValue.Where(p => p.Name.LocalName.Equals("Nombre"));
 
             foreach (PropertyInfo field in instance.GetType().GetProperties())
             {
                 var xmlElement = listValue.Where(p => p.Name.LocalName.Equals(field.Name)).First();
-                setValue(instance, field.Name, xmlElement.Value);
+                setValue(instance, field.Name, xmlElement);
 
             }
 
@@ -112,23 +152,35 @@ namespace MPP
 
         }
 
-        private void setValue(T instance, string fieldName, string value)
+        private void setValue(T instance, string fieldName, XElement value)
         {
             var reflectedProerty = instance.GetType().GetProperty(fieldName);
-
+            
             switch (reflectedProerty.PropertyType.Name)
             {
 
                 case "String":
-                    reflectedProerty.SetValue(instance, value);
+                    reflectedProerty.SetValue(instance, value.Value);
                     break;
                 case "Decimal":
-                    var innerDecimal = Convert.ToDecimal(value);
+                    var innerDecimal = Convert.ToDecimal(value.Value);
                     reflectedProerty.SetValue(instance, innerDecimal);
                     break;
                 case "DateTime":
-                    var innerDate = Convert.ToDateTime(value, CultureInfo.GetCultureInfo("es-ES"));
+                    var innerDate = Convert.ToDateTime(value.Value, CultureInfo.GetCultureInfo("es-ES"));
                     reflectedProerty.SetValue(instance, innerDate);
+                    break;
+                case "List`1":
+                    var property = instance.GetType().GetProperty(fieldName);
+                    var ListValue = (IList)Activator.CreateInstance(property.PropertyType);
+
+
+                    foreach (var elements in value.Elements())
+                    {
+                        ListValue.Add(elements.Value);
+                    }
+
+                    property.SetValue(instance, ListValue);
                     break;
 
             }
@@ -138,8 +190,16 @@ namespace MPP
 
         public List<T> GetAll()
         {
-            var consulta = from usuario in XElement.Load(fileName).Descendants(Unit)
+            IEnumerable<XElement> consulta = null;
+            try {
+                consulta = from usuario in XElement.Load(fileName).Descendants(Unit)
                            select usuario;
+            }
+            catch (FileNotFoundException ex) {
+                MessageBox.Show("no existe ningun objecto o no existe el archivo : " + fileName);
+                return Activator.CreateInstance<List<T>>();
+            }
+   
 
             var listValue = consulta.Elements();
 
@@ -151,12 +211,26 @@ namespace MPP
                 T instance = Activator.CreateInstance<T>();
                 foreach (XElement oneProperty in OneElement.Elements())
                 {
-                    setValue(instance, oneProperty.Name.LocalName, oneProperty.Value);
+                    setValue(instance, oneProperty.Name.LocalName, oneProperty);
                 }
                 ListValue.Add(instance);
             }
 
             return ListValue;
+
+
+        }
+
+        public void SetListValue(T t, string propertyName, XElement listElement) {
+            var property = t.GetType().GetProperty(propertyName);
+            var ListValue = (IList)Activator.CreateInstance(property.PropertyType);
+
+
+            foreach (var elements in listElement.Elements()) {
+                ListValue.Add(elements.Value);
+            }
+
+            property.SetValue(t, ListValue);
 
 
         }

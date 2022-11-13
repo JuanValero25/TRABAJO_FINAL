@@ -5,11 +5,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace TRABAJO_FINAL
 {
@@ -42,15 +44,18 @@ namespace TRABAJO_FINAL
         private void AgregarButton_Click(object sender, EventArgs e)
         {
 
+
+
+
             if (cursoSelecionado != null)
             {
                 cursoSelecionado.Nombre = NombreTextbox.Text;
                 cursoSelecionado.MateriaID = ((MateriaView)MateriaCombo.SelectedItem).ID;
+                cursoSelecionado.ID = cursoSelecionado.generateID();
 
 
-
-                using (IEnumerator<ProfesorView> empEnumerator = (IEnumerator<ProfesorView>)ProfesorList.CheckedItems.GetEnumerator())
-                {
+                var empEnumerator = ProfesorList.CheckedItems.GetEnumerator();
+               
                     if (cursoSelecionado.ProfesoresID == null) {
                         cursoSelecionado.ProfesoresID = new List<string>();
 
@@ -59,15 +64,16 @@ namespace TRABAJO_FINAL
                     while (empEnumerator.MoveNext())
                     {
                         
-                        ProfesorView emp = empEnumerator.Current;
+                        ProfesorView emp = (ProfesorView)empEnumerator.Current;
                         cursoSelecionado.ProfesoresID.Add(emp.ID);
                     }
-                }
+                
 
 
                 cursoSelecionado.fechaInicio = InicioDate.Value;
                 cursoSelecionado.fechaFinalizacion = FinalizacionDate.Value;
                 cursoBLL.SaveCurso(cursoSelecionado);
+
                 AgregarButton.Text = "Agregar";
                 cursoSelecionado = null;
                 return;
@@ -148,6 +154,11 @@ namespace TRABAJO_FINAL
                 }
             }
 
+
+        }
+
+        private void CursosForm_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Componente.cs" />
     <Compile Include="FileResponse.cs" />
     <Compile Include="FilesManagerTest.cs" />
     <Compile Include="FilesManager.cs" />

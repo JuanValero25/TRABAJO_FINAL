@@ -28,10 +28,7 @@ namespace TRABAJO_FINAL
 
         private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CursosForm cursosForm = new CursosForm();
-            cursosForm.MdiParent = this;
-            this.Size = cursosForm.Size;
-            cursosForm.Show();
+ 
         }
 
         private void materiaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,5 +39,12 @@ namespace TRABAJO_FINAL
             materiaForm.Show();
         }
 
+        private void administracionDeCursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CursosForm cursosForm = new CursosForm();
+            cursosForm.MdiParent = this;
+            this.Size = cursosForm.Size;
+            cursosForm.Show();
+        }
     }
 }

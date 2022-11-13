@@ -4,9 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Abstraction
+namespace BE
 {
-    public class Class1
+    public class Usuario
     {
+        public string DNI;
+        public string password;
+
+        public List<string>
+
+
     }
 }

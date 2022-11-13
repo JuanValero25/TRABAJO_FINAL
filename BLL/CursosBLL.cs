@@ -11,25 +11,25 @@ namespace BLL
    public class CursosBLL
     {
 
-        private CursosXMLMPP bll = new CursosXMLMPP();
+        private CursosXMLMPP mpp = new CursosXMLMPP();
 
         public void SaveCurso(Curso curso) {
-            bll.Save(curso);
+            mpp.Save(curso);
         }
 
         public List<Curso> GetAll() {
-            return bll.GetAll();
+            return mpp.GetAll();
         }
 
         public Curso Get(string ID) {
-           return bll.Get(ID);
+           return mpp.Get(ID);
 
 
         }
 
         public void EliminarCurso(Curso curso) {
 
-            bll.Delete(curso);
+            mpp.Delete(curso);
         }
 
 

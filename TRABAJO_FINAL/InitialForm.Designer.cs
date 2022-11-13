@@ -34,6 +34,8 @@ namespace TRABAJO_FINAL
             this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profesoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administracionDeCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inscripcionCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +51,6 @@ namespace TRABAJO_FINAL
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-
             // 
             // alumnosToolStripMenuItem
             // 
@@ -60,6 +61,9 @@ namespace TRABAJO_FINAL
             // 
             // cursosToolStripMenuItem
             // 
+            this.cursosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.administracionDeCursosToolStripMenuItem,
+            this.inscripcionCursoToolStripMenuItem});
             this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
             this.cursosToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.cursosToolStripMenuItem.Text = "Cursos";
@@ -78,6 +82,19 @@ namespace TRABAJO_FINAL
             this.materiaToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.materiaToolStripMenuItem.Text = "Materia";
             this.materiaToolStripMenuItem.Click += new System.EventHandler(this.materiaToolStripMenuItem_Click);
+            // 
+            // administracionDeCursosToolStripMenuItem
+            // 
+            this.administracionDeCursosToolStripMenuItem.Name = "administracionDeCursosToolStripMenuItem";
+            this.administracionDeCursosToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.administracionDeCursosToolStripMenuItem.Text = "Administracion de cursos";
+            this.administracionDeCursosToolStripMenuItem.Click += new System.EventHandler(this.administracionDeCursosToolStripMenuItem_Click);
+            // 
+            // inscripcionCursoToolStripMenuItem
+            // 
+            this.inscripcionCursoToolStripMenuItem.Name = "inscripcionCursoToolStripMenuItem";
+            this.inscripcionCursoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.inscripcionCursoToolStripMenuItem.Text = "Inscripcion curso";
             // 
             // InitialForm
             // 
@@ -103,6 +120,8 @@ namespace TRABAJO_FINAL
         private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem profesoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem materiaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administracionDeCursosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inscripcionCursoToolStripMenuItem;
     }
 }
 

@@ -30,6 +30,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPP", "..\MPP\MPP.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstraction", "..\Abstraction\Abstraction.csproj", "{04D919B9-3C39-4F9F-AA1B-B7FD31DC5C1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servicios", "..\Servicios\Servicios.csproj", "{8A9228DF-6A95-4870-A3D0-7F795F25C0D3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{04D919B9-3C39-4F9F-AA1B-B7FD31DC5C1C} = {04D919B9-3C39-4F9F-AA1B-B7FD31DC5C1C}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +61,10 @@ Global
 		{04D919B9-3C39-4F9F-AA1B-B7FD31DC5C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04D919B9-3C39-4F9F-AA1B-B7FD31DC5C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04D919B9-3C39-4F9F-AA1B-B7FD31DC5C1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A9228DF-6A95-4870-A3D0-7F795F25C0D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A9228DF-6A95-4870-A3D0-7F795F25C0D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A9228DF-6A95-4870-A3D0-7F795F25C0D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A9228DF-6A95-4870-A3D0-7F795F25C0D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
