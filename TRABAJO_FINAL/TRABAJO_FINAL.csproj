@@ -58,11 +58,11 @@
     <Compile Include="CursosForm.Designer.cs">
       <DependentUpon>CursosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cursos_alumnos.cs">
+    <Compile Include="InscripcionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cursos_alumnos.Designer.cs">
-      <DependentUpon>Cursos_alumnos.cs</DependentUpon>
+    <Compile Include="InscripcionForm.Designer.cs">
+      <DependentUpon>InscripcionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InitialForm.cs">
       <SubType>Form</SubType>
@@ -82,11 +82,29 @@
     <Compile Include="MateriaForm.Designer.cs">
       <DependentUpon>MateriaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PagoDeTarjetaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagoDeTarjetaForm.Designer.cs">
+      <DependentUpon>PagoDeTarjetaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PagoEfectivoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagoEfectivoForm.Designer.cs">
+      <DependentUpon>PagoEfectivoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PagosForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PagosForm.Designer.cs">
       <DependentUpon>PagosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PermisosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PermisosForm.Designer.cs">
+      <DependentUpon>PermisosForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ProfesoresForm.cs">
       <SubType>Form</SubType>
@@ -102,8 +120,8 @@
     <EmbeddedResource Include="CursosForm.resx">
       <DependentUpon>CursosForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cursos_alumnos.resx">
-      <DependentUpon>Cursos_alumnos.cs</DependentUpon>
+    <EmbeddedResource Include="InscripcionForm.resx">
+      <DependentUpon>InscripcionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InitialForm.resx">
       <DependentUpon>InitialForm.cs</DependentUpon>
@@ -114,8 +132,17 @@
     <EmbeddedResource Include="MateriaForm.resx">
       <DependentUpon>MateriaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PagoDeTarjetaForm.resx">
+      <DependentUpon>PagoDeTarjetaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagoEfectivoForm.resx">
+      <DependentUpon>PagoEfectivoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PagosForm.resx">
       <DependentUpon>PagosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PermisosForm.resx">
+      <DependentUpon>PermisosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProfesoresForm.resx">
       <DependentUpon>ProfesoresForm.cs</DependentUpon>

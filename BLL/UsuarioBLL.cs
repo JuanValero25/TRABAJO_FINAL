@@ -14,6 +14,11 @@ namespace BLL
 
             var usuario = mapper.Get(DNI);
 
+            if (usuario.ID == null)
+            {
+                return null;
+            }
+
             if (usuario.password.Equals(password))
             {
                 // set role for all enviroments

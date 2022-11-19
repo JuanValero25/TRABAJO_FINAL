@@ -6,7 +6,7 @@ namespace BE
     {
         public DateTime FechaDeInscripcion { get; set; }
         public string AlumnoID { get; set; }
-        public string AulaID { get; set; }
+        public string CursoID { get; set; }
 
     }
 }

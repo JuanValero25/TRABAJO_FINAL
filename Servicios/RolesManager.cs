@@ -42,16 +42,16 @@ namespace Servicios
 
 
             // permisos para Cursos de alumnos Admin
-            var CursoAlumnoAccesoAdmin = new Acceso("CURSO_ALUMNO");
-            CursoAlumnoAccesoAdmin.agregarHijo(agregarYmodificar);
-            CursoAlumnoAccesoAdmin.agregarHijo(Eliminar);
-            CursoAlumnoAccesoAdmin.agregarHijo(Listar);
+            var InscripcionAccesoAdmin = new Acceso("INSCRIPCION");
+            InscripcionAccesoAdmin.agregarHijo(agregarYmodificar);
+            InscripcionAccesoAdmin.agregarHijo(Eliminar);
+            InscripcionAccesoAdmin.agregarHijo(Listar);
 
             // Permisos para Cursos de alumnos client
-            var CursoAlumnoAccesoClient = new Acceso("CURSO_ALUMNO");
-            CursoAlumnoAccesoClient.agregarHijo(agregarYmodificar);
-            CursoAlumnoAccesoClient.agregarHijo(Eliminar);
-            CursoAlumnoAccesoClient.agregarHijo(Listar);
+            var InscripcionAccesoClient = new Acceso("INSCRIPCION");
+            InscripcionAccesoClient.agregarHijo(agregarYmodificar);
+            InscripcionAccesoClient.agregarHijo(Eliminar);
+            InscripcionAccesoClient.agregarHijo(Listar);
 
             // permisos para Cursos Admin
             var CursosAccesoAdmin = new Acceso("CURSOS");
@@ -76,6 +76,12 @@ namespace Servicios
             // permisos para Pagos Admin
             var PagosAccesoAdmin = new Acceso("PAGOS");
             PagosAccesoAdmin.agregarHijo(agregarYmodificar);
+            PagosAccesoAdmin.agregarHijo(Listar);
+
+            var PermisosAccesoAdmin = new Acceso("PERMISOS");
+            PagosAccesoAdmin.agregarHijo(agregarYmodificar);
+            PagosAccesoAdmin.agregarHijo(Listar);
+
 
             // permisos para Login Admin
             var LoginAccesoAdmin = new Acceso("LOGIN");
@@ -84,14 +90,14 @@ namespace Servicios
             LoginAccesoAdmin.agregarHijo(Listar);
 
             // Permisos para Client de la vista de Login
-            var LoginAccesoClient = new Acceso("PAGOS");
+            var LoginAccesoClient = new Acceso("LOGIN");
             LoginAccesoAdmin.agregarHijo(Listar);
 
 
             var AdminRole = new Role("ADMIN");
             AdminRole.agregarHijo(AlumnosAccesoAdmin);
             AdminRole.agregarHijo(ProfesorAccesoAdmin);
-            AdminRole.agregarHijo(CursoAlumnoAccesoAdmin);
+            AdminRole.agregarHijo(InscripcionAccesoAdmin);
             AdminRole.agregarHijo(MateriasAccesoAdmin);
             AdminRole.agregarHijo(PagosAccesoAdmin);
             AdminRole.agregarHijo(LoginAccesoAdmin);
@@ -103,7 +109,7 @@ namespace Servicios
             var ClientRole = new Role("CLIENTE");
             ClientRole.agregarHijo(AlumnosAccesoClient);
             ClientRole.agregarHijo(ProfesorAccesoClient);
-            ClientRole.agregarHijo(CursoAlumnoAccesoClient);
+            ClientRole.agregarHijo(InscripcionAccesoClient);
             ClientRole.agregarHijo(MateriasAccesoClient);
             ClientRole.agregarHijo(LoginAccesoClient);
             ClientRole.agregarHijo(CursosAccesoClient);

@@ -72,7 +72,7 @@ namespace TRABAJO_FINAL
 
 
             var newAlumno = new Alumno();
-            newAlumno.ID = newAlumno.generateID();
+            newAlumno.ID = this.DNITextBox.Text;
             newAlumno.DNI = this.DNITextBox.Text;
             newAlumno.Nombre = this.NombreTextBox.Text;
             newAlumno.Apellido = this.ApellidoTextBox.Text;

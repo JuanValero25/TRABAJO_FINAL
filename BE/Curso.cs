@@ -20,5 +20,10 @@ namespace BE
         public Decimal estudiantesInscritos { get; set; }
 
         public Decimal Precio { get; set; }
+
+        public override string ToString()
+        {
+            return Nombre;
+        }
     }
 }

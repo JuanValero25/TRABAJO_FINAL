@@ -1,6 +1,7 @@
 ﻿using BE;
 using MPP;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace BLL
 {
@@ -14,8 +15,42 @@ namespace BLL
         public void AgregarAlumno(Alumno alumno)
         {
 
+            var AlumnoExistente = this.GetAll().Find(a => a.DNI.Equals(alumno.DNI));
+
+            if (AlumnoExistente != null)
+            {
+
+                MessageBox.Show("el alumno ya existe");
+                return;
+
+            }
+
             alumnoXMLMPP.Save(alumno);
 
+        }
+
+        public void ModificarAlumno(Alumno alumno)
+        {
+            var AlumnoExistente = this.GetAll().Find(a => a.DNI.Equals(alumno.DNI));
+
+
+            if (AlumnoExistente == null)
+            {
+
+                MessageBox.Show("el alumno no ya existe");
+                return;
+
+            }
+
+            alumnoXMLMPP.Delete(alumno);
+            alumnoXMLMPP.Save(alumno);
+
+        }
+
+        public Alumno GetAlumnoPorDni(string DNI)
+        {
+
+            return this.GetAll().Find(a => a.DNI.Equals(DNI));
         }
 
         public Alumno getAlumno(string ID)

@@ -36,6 +36,8 @@ namespace TRABAJO_FINAL
             this.inscripcionCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profesoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.permisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +47,9 @@ namespace TRABAJO_FINAL
             this.alumnosToolStripMenuItem,
             this.cursosToolStripMenuItem,
             this.profesoresToolStripMenuItem,
-            this.materiaToolStripMenuItem});
+            this.materiaToolStripMenuItem,
+            this.pagosToolStripMenuItem,
+            this.permisosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -73,6 +77,7 @@ namespace TRABAJO_FINAL
             // 
             // administracionDeCursosToolStripMenuItem
             // 
+            this.administracionDeCursosToolStripMenuItem.Enabled = false;
             this.administracionDeCursosToolStripMenuItem.Name = "administracionDeCursosToolStripMenuItem";
             this.administracionDeCursosToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.administracionDeCursosToolStripMenuItem.Text = "Administracion de cursos";
@@ -80,9 +85,11 @@ namespace TRABAJO_FINAL
             // 
             // inscripcionCursoToolStripMenuItem
             // 
+            this.inscripcionCursoToolStripMenuItem.Enabled = false;
             this.inscripcionCursoToolStripMenuItem.Name = "inscripcionCursoToolStripMenuItem";
             this.inscripcionCursoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.inscripcionCursoToolStripMenuItem.Text = "Inscripcion curso";
+            this.inscripcionCursoToolStripMenuItem.Click += new System.EventHandler(this.inscripcionCursoToolStripMenuItem_Click);
             // 
             // profesoresToolStripMenuItem
             // 
@@ -100,6 +107,22 @@ namespace TRABAJO_FINAL
             this.materiaToolStripMenuItem.Text = "Materia";
             this.materiaToolStripMenuItem.Click += new System.EventHandler(this.materiaToolStripMenuItem_Click);
             // 
+            // permisosToolStripMenuItem
+            // 
+            this.permisosToolStripMenuItem.Enabled = false;
+            this.permisosToolStripMenuItem.Name = "permisosToolStripMenuItem";
+            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.permisosToolStripMenuItem.Text = "Permisos";
+            this.permisosToolStripMenuItem.Click += new System.EventHandler(this.permisosToolStripMenuItem_Click);
+            // 
+            // pagosToolStripMenuItem
+            // 
+            this.pagosToolStripMenuItem.Enabled = false;
+            this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
+            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.pagosToolStripMenuItem.Text = "Pagos";
+            this.pagosToolStripMenuItem.Click += new System.EventHandler(this.pagosToolStripMenuItem_Click);
+            // 
             // InitialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,7 +132,8 @@ namespace TRABAJO_FINAL
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "InitialForm";
-            this.Text = "Form1";
+            this.Text = "Main";
+            this.Load += new System.EventHandler(this.InitialForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -126,6 +150,8 @@ namespace TRABAJO_FINAL
         private System.Windows.Forms.ToolStripMenuItem materiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administracionDeCursosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inscripcionCursoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem permisosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pagosToolStripMenuItem;
     }
 }
 

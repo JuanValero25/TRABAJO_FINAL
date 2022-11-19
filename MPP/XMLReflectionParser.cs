@@ -105,10 +105,8 @@ namespace MPP
         public void Delete(IEntidad ObjectToParse)
         {
 
-
-
             XDocument xmlDoc = XDocument.Load(fileName);
-            var element = xmlDoc.Element(typeName + "s").Descendants(typeName + "_unit").Where(x => x.Element("Codigo").Value.Equals(ObjectToParse.ID));
+            var element = xmlDoc.Element(typeName + "s").Descendants(typeName + "_unit").Where(x => x.Element("ID").Value.Equals(ObjectToParse.ID));
 
             element.Remove();
             xmlDoc.Save(fileName);
@@ -170,6 +168,10 @@ namespace MPP
 
                 case "String":
                     reflectedProerty.SetValue(instance, value.Value);
+                    break;
+                case "Int32":
+                    int result = Int32.Parse(value.Value);
+                    reflectedProerty.SetValue(instance, result);
                     break;
                 case "Decimal":
                     var innerDecimal = Convert.ToDecimal(value.Value);

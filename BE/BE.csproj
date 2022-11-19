@@ -49,7 +49,7 @@
     <Compile Include="Entidad.cs" />
     <Compile Include="Inscripcion.cs" />
     <Compile Include="Materia.cs" />
-    <Compile Include="PagoCuota.cs" />
+    <Compile Include="Pago.cs" />
     <Compile Include="Profesor.cs" />
     <Compile Include="MateriaView.cs" />
     <Compile Include="ProfesorView.cs" />

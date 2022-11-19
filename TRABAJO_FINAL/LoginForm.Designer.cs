@@ -35,6 +35,8 @@ namespace TRABAJO_FINAL
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.TestClientButton = new System.Windows.Forms.Button();
+            this.SuperAdminButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LogingButton
@@ -53,6 +55,7 @@ namespace TRABAJO_FINAL
             this.DniTextBox.Name = "DniTextBox";
             this.DniTextBox.Size = new System.Drawing.Size(174, 20);
             this.DniTextBox.TabIndex = 1;
+            this.DniTextBox.Text = "999555111";
             // 
             // PasswordTextBox
             // 
@@ -61,6 +64,7 @@ namespace TRABAJO_FINAL
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(174, 20);
             this.PasswordTextBox.TabIndex = 2;
+            this.PasswordTextBox.Text = "fancy_password";
             // 
             // label1
             // 
@@ -89,11 +93,33 @@ namespace TRABAJO_FINAL
             this.button1.Text = "Create Account";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // TestClientButton
+            // 
+            this.TestClientButton.Location = new System.Drawing.Point(64, 140);
+            this.TestClientButton.Name = "TestClientButton";
+            this.TestClientButton.Size = new System.Drawing.Size(75, 23);
+            this.TestClientButton.TabIndex = 8;
+            this.TestClientButton.Text = "Test Client";
+            this.TestClientButton.UseVisualStyleBackColor = true;
+            this.TestClientButton.Click += new System.EventHandler(this.TestClientButton_Click);
+            // 
+            // SuperAdminButton
+            // 
+            this.SuperAdminButton.Location = new System.Drawing.Point(64, 189);
+            this.SuperAdminButton.Name = "SuperAdminButton";
+            this.SuperAdminButton.Size = new System.Drawing.Size(75, 23);
+            this.SuperAdminButton.TabIndex = 9;
+            this.SuperAdminButton.Text = "SuperAdmin";
+            this.SuperAdminButton.UseVisualStyleBackColor = true;
+            this.SuperAdminButton.Click += new System.EventHandler(this.SuperAdminButton_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.SuperAdminButton);
+            this.Controls.Add(this.TestClientButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -115,5 +141,7 @@ namespace TRABAJO_FINAL
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button TestClientButton;
+        private System.Windows.Forms.Button SuperAdminButton;
     }
 }

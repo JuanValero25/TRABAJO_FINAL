@@ -44,19 +44,19 @@ namespace TRABAJO_FINAL
             this.NombreTextbox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
+            this.PrecioNumber = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.LimiteNumber = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrecioNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LimiteNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // InicioDate
             // 
             this.InicioDate.Location = new System.Drawing.Point(458, 86);
+            this.InicioDate.MinDate = new System.DateTime(2022, 11, 19, 0, 0, 0, 0);
             this.InicioDate.Name = "InicioDate";
             this.InicioDate.Size = new System.Drawing.Size(200, 20);
             this.InicioDate.TabIndex = 2;
@@ -115,6 +115,7 @@ namespace TRABAJO_FINAL
             // 
             // AgregarButton
             // 
+            this.AgregarButton.Enabled = false;
             this.AgregarButton.Location = new System.Drawing.Point(61, 255);
             this.AgregarButton.Name = "AgregarButton";
             this.AgregarButton.Size = new System.Drawing.Size(75, 23);
@@ -125,6 +126,7 @@ namespace TRABAJO_FINAL
             // 
             // EliminarButton
             // 
+            this.EliminarButton.Enabled = false;
             this.EliminarButton.Location = new System.Drawing.Point(256, 255);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(75, 23);
@@ -135,6 +137,7 @@ namespace TRABAJO_FINAL
             // 
             // ListarTodoButton
             // 
+            this.ListarTodoButton.Enabled = false;
             this.ListarTodoButton.Location = new System.Drawing.Point(439, 255);
             this.ListarTodoButton.Name = "ListarTodoButton";
             this.ListarTodoButton.Size = new System.Drawing.Size(75, 23);
@@ -146,7 +149,7 @@ namespace TRABAJO_FINAL
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(61, 335);
+            this.dataGridView1.Location = new System.Drawing.Point(61, 328);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(661, 184);
             this.dataGridView1.TabIndex = 12;
@@ -185,21 +188,12 @@ namespace TRABAJO_FINAL
             this.label6.TabIndex = 15;
             this.label6.Text = "minimo 2 meses maximo 6 meses";
             // 
-            // numericUpDown1
+            // PrecioNumber
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(458, 182);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(200, 20);
-            this.numericUpDown1.TabIndex = 16;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(0, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "label7";
+            this.PrecioNumber.Location = new System.Drawing.Point(458, 182);
+            this.PrecioNumber.Name = "PrecioNumber";
+            this.PrecioNumber.Size = new System.Drawing.Size(200, 20);
+            this.PrecioNumber.TabIndex = 16;
             // 
             // label8
             // 
@@ -210,12 +204,12 @@ namespace TRABAJO_FINAL
             this.label8.TabIndex = 18;
             this.label8.Text = "Precio";
             // 
-            // numericUpDown2
+            // LimiteNumber
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(242, 200);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(187, 20);
-            this.numericUpDown2.TabIndex = 19;
+            this.LimiteNumber.Location = new System.Drawing.Point(242, 200);
+            this.LimiteNumber.Name = "LimiteNumber";
+            this.LimiteNumber.Size = new System.Drawing.Size(187, 20);
+            this.LimiteNumber.TabIndex = 19;
             // 
             // label9
             // 
@@ -232,10 +226,9 @@ namespace TRABAJO_FINAL
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 577);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.LimiteNumber);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.PrecioNumber);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.NombreTextbox);
@@ -255,8 +248,8 @@ namespace TRABAJO_FINAL
             this.Text = "CursosForm";
             this.Load += new System.EventHandler(this.CursosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrecioNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LimiteNumber)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,10 +271,9 @@ namespace TRABAJO_FINAL
         private System.Windows.Forms.TextBox NombreTextbox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown PrecioNumber;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown LimiteNumber;
         private System.Windows.Forms.Label label9;
     }
 }

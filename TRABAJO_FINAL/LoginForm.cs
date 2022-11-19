@@ -19,6 +19,8 @@ namespace TRABAJO_FINAL
 
         private void LogingButton_Click(object sender, EventArgs e)
         {
+
+
             var dni = DniTextBox.Text;
             var password = EncryptionService.EncryptString(PasswordTextBox.Text);
 
@@ -33,8 +35,21 @@ namespace TRABAJO_FINAL
 
 
             this.initForm.EnableMenuToolTips();
+            this.Close();
 
 
+        }
+
+        private void TestClientButton_Click(object sender, EventArgs e)
+        {
+            DniTextBox.Text = "999222111";
+           PasswordTextBox.Text = "1234";
+        }
+
+        private void SuperAdminButton_Click(object sender, EventArgs e)
+        {
+            DniTextBox.Text = "999555111";
+            PasswordTextBox.Text = "fancy_password";
         }
     }
 }

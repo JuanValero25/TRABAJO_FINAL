@@ -24,6 +24,17 @@ namespace MPP
 
                 MessageBox.Show("inicializando app Usuario Super Admin Creado");
 
+
+                var Cliente = new Usuario();
+                Cliente.DNI = "999222111";
+                Cliente.ID = "999222111";
+                Cliente.password = EncryptionService.EncryptString("1234");
+                Cliente.Role = roleManager.GetRoleByName("CLIENTE").name;
+                Save(Cliente);
+
+
+                MessageBox.Show("inicializando app Usuario Test Cliente");
+
             }
 
 

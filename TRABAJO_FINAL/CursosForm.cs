@@ -21,9 +21,18 @@ namespace TRABAJO_FINAL
         public CursosForm(Role role)
         {
             InitializeComponent();
+            InitDates();
             initProfesrList();
             initMaterias();
             renderByRole(role);
+        }
+
+        private void InitDates()
+        {
+            InicioDate.MinDate = DateTime.Now;
+            FinalizacionDate.MinDate = DateTime.Now.AddMonths(2);
+
+
         }
 
         private void renderByRole(Role role)
@@ -65,10 +74,6 @@ namespace TRABAJO_FINAL
 
         private void AgregarButton_Click(object sender, EventArgs e)
         {
-
-
-
-
             if (cursoSelecionado != null)
             {
                 cursoSelecionado.Nombre = NombreTextbox.Text;
@@ -92,7 +97,13 @@ namespace TRABAJO_FINAL
                 }
 
 
+                if (!ValidaFechas(InicioDate.Value, FinalizacionDate.Value)) {
 
+                    return;
+                }
+
+                cursoSelecionado.limiteEstudiantes = LimiteNumber.Value;
+                cursoSelecionado.Precio = PrecioNumber.Value;
                 cursoSelecionado.fechaInicio = InicioDate.Value;
                 cursoSelecionado.fechaFinalizacion = FinalizacionDate.Value;
                 cursoBLL.SaveCurso(cursoSelecionado);
@@ -108,29 +119,50 @@ namespace TRABAJO_FINAL
             newCurso.Nombre = NombreTextbox.Text;
 
 
-            using (IEnumerator<ProfesorView> empEnumerator = (IEnumerator<ProfesorView>)ProfesorList.CheckedItems.GetEnumerator())
+            var newEnumerator = ProfesorList.CheckedItems.GetEnumerator();
+
+            if (cursoSelecionado.ProfesoresID == null)
             {
-                if (cursoSelecionado.ProfesoresID == null)
-                {
-                    newCurso.ProfesoresID = new List<string>();
+                cursoSelecionado.ProfesoresID = new List<string>();
 
-                }
-
-                while (empEnumerator.MoveNext())
-                {
-
-                    ProfesorView emp = empEnumerator.Current;
-                    newCurso.ProfesoresID.Add(emp.ID);
-                }
             }
 
 
-            newCurso.MateriaID = ((MateriaView)MateriaCombo.SelectedItem).ID;
+            while (newEnumerator.MoveNext())
+            {
 
+                ProfesorView emp = (ProfesorView)newEnumerator.Current;
+                newCurso.ProfesoresID.Add(emp.ID);
+            }
+
+
+
+            newCurso.MateriaID = ((MateriaView)MateriaCombo.SelectedItem).ID;
+            newCurso.limiteEstudiantes = LimiteNumber.Value;
+            newCurso.Precio = PrecioNumber.Value;
             newCurso.fechaInicio = InicioDate.Value;
             newCurso.fechaFinalizacion = FinalizacionDate.Value;
 
             cursoBLL.SaveCurso(newCurso);
+        }
+
+        private bool ValidaFechas(DateTime fechaDeInicio, DateTime fechaDeFinalizacion) {
+
+            if (fechaDeInicio == null || fechaDeFinalizacion == null) {
+
+                MessageBox.Show("debe selecionar alguna fecha");
+                return false;
+            }
+
+
+            if (fechaDeInicio > fechaDeFinalizacion) {
+                MessageBox.Show("fecha de inicio debe ser menos a la fecha final");
+                return false;
+            }
+
+            return true;
+
+        
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -150,6 +182,12 @@ namespace TRABAJO_FINAL
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
+            if (this.cursoSelecionado != null)
+            {
+                cursoBLL.EliminarCurso(cursoSelecionado);
+                cursoSelecionado = null;
+            }
+
 
         }
 
@@ -162,20 +200,22 @@ namespace TRABAJO_FINAL
             InicioDate.Value = this.cursoSelecionado.fechaInicio;
             FinalizacionDate.Value = this.cursoSelecionado.fechaFinalizacion;
             MateriaCombo.SelectedItem = materiaBLL.Get(cursoSelecionado.MateriaID);
+            LimiteNumber.Value = cursoSelecionado.limiteEstudiantes;
+            PrecioNumber.Value = PrecioNumber.Value;
 
 
-            using (IEnumerator<ProfesorView> empEnumerator = (IEnumerator<ProfesorView>)ProfesorList.CheckedItems.GetEnumerator())
+
+            var empEnumerator = ProfesorList.CheckedItems.GetEnumerator();
+
+            var counter = 0;
+            while (empEnumerator.MoveNext())
             {
-                var counter = 0;
-                while (empEnumerator.MoveNext())
+                counter++;
+                var emp = (ProfesorView)empEnumerator.Current;
+                if (this.cursoSelecionado.ProfesoresID.Select(id => id.Equals(emp.ID)).ToList().Count > 0)
                 {
-                    counter++;
-                    ProfesorView emp = empEnumerator.Current;
-                    if (this.cursoSelecionado.ProfesoresID.Select(id => id.Equals(emp.ID)).ToList().Count > 0)
-                    {
-                        ProfesorList.SetItemChecked(counter, true);
-                    };
-                }
+                    ProfesorList.SetItemChecked(counter, true);
+                };
             }
 
 
