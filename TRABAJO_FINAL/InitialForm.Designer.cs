@@ -38,8 +38,11 @@ namespace TRABAJO_FINAL
             this.materiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.permisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backupAndRestoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.finalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupAndRestoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SubirNotaToolTip = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,8 +55,10 @@ namespace TRABAJO_FINAL
             this.materiaToolStripMenuItem,
             this.pagosToolStripMenuItem,
             this.permisosToolStripMenuItem,
+            this.finalesToolStripMenuItem,
+            this.cuentasToolStripMenuItem,
             this.backupAndRestoreToolStripMenuItem,
-            this.cuentasToolStripMenuItem});
+            this.logOutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -72,7 +77,8 @@ namespace TRABAJO_FINAL
             // 
             this.cursosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.administracionDeCursosToolStripMenuItem,
-            this.inscripcionCursoToolStripMenuItem});
+            this.inscripcionCursoToolStripMenuItem,
+            this.SubirNotaToolTip});
             this.cursosToolStripMenuItem.Enabled = false;
             this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
             this.cursosToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
@@ -127,13 +133,13 @@ namespace TRABAJO_FINAL
             this.permisosToolStripMenuItem.Text = "Permisos";
             this.permisosToolStripMenuItem.Click += new System.EventHandler(this.permisosToolStripMenuItem_Click);
             // 
-            // backupAndRestoreToolStripMenuItem
+            // finalesToolStripMenuItem
             // 
-            this.backupAndRestoreToolStripMenuItem.Enabled = false;
-            this.backupAndRestoreToolStripMenuItem.Name = "backupAndRestoreToolStripMenuItem";
-            this.backupAndRestoreToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
-            this.backupAndRestoreToolStripMenuItem.Text = "Backup and Restore";
-            this.backupAndRestoreToolStripMenuItem.Click += new System.EventHandler(this.backupAndRestoreToolStripMenuItem_Click);
+            this.finalesToolStripMenuItem.Enabled = false;
+            this.finalesToolStripMenuItem.Name = "finalesToolStripMenuItem";
+            this.finalesToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.finalesToolStripMenuItem.Text = "Finales";
+            this.finalesToolStripMenuItem.Click += new System.EventHandler(this.finalesToolStripMenuItem_Click);
             // 
             // cuentasToolStripMenuItem
             // 
@@ -142,6 +148,29 @@ namespace TRABAJO_FINAL
             this.cuentasToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.cuentasToolStripMenuItem.Text = "Cuentas";
             this.cuentasToolStripMenuItem.Click += new System.EventHandler(this.cuentasToolStripMenuItem_Click);
+            // 
+            // backupAndRestoreToolStripMenuItem
+            // 
+            this.backupAndRestoreToolStripMenuItem.Enabled = false;
+            this.backupAndRestoreToolStripMenuItem.Name = "backupAndRestoreToolStripMenuItem";
+            this.backupAndRestoreToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
+            this.backupAndRestoreToolStripMenuItem.Text = "Backup and Restore";
+            this.backupAndRestoreToolStripMenuItem.Click += new System.EventHandler(this.backupAndRestoreToolStripMenuItem_Click);
+            // 
+            // SubirNotaToolTip
+            // 
+            this.SubirNotaToolTip.Enabled = false;
+            this.SubirNotaToolTip.Name = "SubirNotaToolTip";
+            this.SubirNotaToolTip.Size = new System.Drawing.Size(208, 22);
+            this.SubirNotaToolTip.Text = "Subir notas";
+            this.SubirNotaToolTip.Click += new System.EventHandler(this.ponerNotasToolStripMenuItem_Click);
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.logOutToolStripMenuItem.Text = "LogOut";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // InitialForm
             // 
@@ -174,6 +203,9 @@ namespace TRABAJO_FINAL
         private System.Windows.Forms.ToolStripMenuItem pagosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backupAndRestoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cuentasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem finalesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SubirNotaToolTip;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
     }
 }
 

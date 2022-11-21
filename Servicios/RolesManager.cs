@@ -53,6 +53,22 @@ namespace Servicios
             InscripcionAccesoClient.agregarHijo(Eliminar);
             InscripcionAccesoClient.agregarHijo(Listar);
 
+
+
+            // permisos para Cursos de alumnos Admin
+            var FinalesAccesoAdmin = new Acceso("FINALES");
+            FinalesAccesoAdmin.agregarHijo(agregarYmodificar);
+            FinalesAccesoAdmin.agregarHijo(Eliminar);
+            FinalesAccesoAdmin.agregarHijo(Listar);
+
+            // Permisos para Cursos de alumnos client
+            var FinalesAccesoClient = new Acceso("FINALES");
+            FinalesAccesoClient.agregarHijo(agregarYmodificar);
+            FinalesAccesoClient.agregarHijo(Eliminar);
+            FinalesAccesoClient.agregarHijo(Listar);
+
+
+
             // permisos para Cursos Admin
             var CursosAccesoAdmin = new Acceso("CURSOS");
             CursosAccesoAdmin.agregarHijo(agregarYmodificar);
@@ -102,6 +118,12 @@ namespace Servicios
             LoginAccesoAdmin.agregarHijo(Listar);
 
 
+            var SubirNotasProfAccesoAdmin = new Acceso("SUBIR_NOTAS");
+            SubirNotasProfAccesoAdmin.agregarHijo(agregarYmodificar);
+
+
+
+
             var AdminRole = new Role("ADMIN");
             AdminRole.agregarHijo(AlumnosAccesoAdmin);
             AdminRole.agregarHijo(ProfesorAccesoAdmin);
@@ -113,6 +135,8 @@ namespace Servicios
             AdminRole.agregarHijo(PermisosAccesoAdmin);
             AdminRole.agregarHijo(BackupAccesoAdmin);
             AdminRole.agregarHijo(CuentasAccesoAdmin);
+            AdminRole.agregarHijo(FinalesAccesoAdmin);
+
 
 
 
@@ -125,9 +149,21 @@ namespace Servicios
             ClientRole.agregarHijo(MateriasAccesoClient);
             ClientRole.agregarHijo(LoginAccesoClient);
             ClientRole.agregarHijo(CursosAccesoClient);
+            ClientRole.agregarHijo(FinalesAccesoClient);
+
+            var ProfesorRole = new Role("PROFESOR");
+            ProfesorRole.agregarHijo(ProfesorAccesoClient);
+            ProfesorRole.agregarHijo(MateriasAccesoClient);
+            ProfesorRole.agregarHijo(SubirNotasProfAccesoAdmin);
+            ProfesorRole.agregarHijo(AlumnosAccesoClient);
+
+
+
+
 
             Roles.Add(AdminRole);
             Roles.Add(ClientRole);
+            Roles.Add(ProfesorRole);
 
         }
 
@@ -157,6 +193,11 @@ namespace Servicios
         {
 
             return this.Roles;
+        }
+
+        public void ResetSession() {
+            this.currentRole = null;
+        
         }
 
         public void SetRolebyName(string roleName)

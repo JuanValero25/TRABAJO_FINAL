@@ -2,13 +2,9 @@
 using BLL;
 using Servicios;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TRABAJO_FINAL
@@ -24,14 +20,16 @@ namespace TRABAJO_FINAL
             InitiRoleCombo();
         }
 
-        private void InitiRoleCombo() {
-            RoleCombo.Items.AddRange(roleM.GetAllRoles().Select(r=>r.name).ToArray());
+        private void InitiRoleCombo()
+        {
+            RoleCombo.Items.AddRange(roleM.GetAllRoles().Select(r => r.name).ToArray());
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (UsuarioDNIText.Text == "") {
+            if (UsuarioDNIText.Text == "")
+            {
 
                 MessageBox.Show("usuario no puede estar vacio");
             }
@@ -42,17 +40,18 @@ namespace TRABAJO_FINAL
                 MessageBox.Show("password no puede estar vacio");
             }
 
-            if (RoleCombo.SelectedItem == null )
+            if (RoleCombo.SelectedItem == null)
             {
 
                 MessageBox.Show("debe selecionar un role no puede estar vacio");
             }
 
-            var usuario = new Usuario() {
-            DNI = UsuarioDNIText.Text,
-            ID = UsuarioDNIText.Text,
-            Role = RoleCombo.SelectedItem.ToString(),
-            password =    EncryptionService.EncryptString(PasswordText.Text)
+            var usuario = new Usuario()
+            {
+                DNI = UsuarioDNIText.Text,
+                ID = UsuarioDNIText.Text,
+                Role = RoleCombo.SelectedItem.ToString(),
+                password = EncryptionService.EncryptString(PasswordText.Text)
             };
 
             this.usuarioBLL.GuardarUsuario(usuario);

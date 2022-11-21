@@ -32,6 +32,12 @@ namespace BLL
             mpp.Delete(curso);
         }
 
+        public List<Curso> GetAllByProfesorIDAndMateria(string ID, string materiaID)
+        {
+            return mpp.GetAll().FindAll(c=>c.ProfesoresID.Contains(ID) && c.MateriaID.Equals(materiaID) );
+        }
+
+
 
 
     }

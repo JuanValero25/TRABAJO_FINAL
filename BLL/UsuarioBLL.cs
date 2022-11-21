@@ -37,18 +37,21 @@ namespace BLL
 
         }
 
-        public void GuardarUsuario(Usuario user) {
+        public void GuardarUsuario(Usuario user)
+        {
 
             var tempUser = mapper.Get(user.ID);
 
-            if (tempUser.ID != null) {
+            if (tempUser.ID != null)
+            {
                 MessageBox.Show("Usuario ya existe");
                 return;
             }
             mapper.Save(user);
         }
 
-        public List<Usuario> GetAllUsuarios() {
+        public List<Usuario> GetAllUsuarios()
+        {
             return mapper.GetAll();
         }
 

@@ -42,10 +42,23 @@ namespace TRABAJO_FINAL
             var AccessosPagos = currentRole.ObtenerHijos().Where(h => h.name.Equals("PERMISOS"));
             var AccessosBackup = currentRole.ObtenerHijos().Where(h => h.name.Equals("PACKUP_AND_RESTORE"));
             var AccessosCuentas = currentRole.ObtenerHijos().Where(h => h.name.Equals("CUENTAS"));
+            var FinalesCuentas = currentRole.ObtenerHijos().Where(h => h.name.Equals("FINALES"));
+            var SubirCuentas = currentRole.ObtenerHijos().Where(h => h.name.Equals("SUBIR_NOTAS"));
+
+            if (SubirCuentas.Count() > 0)
+            {
+                SubirNotaToolTip.Enabled = true;
+
+            }
 
             if (AccessosCursos.Count() > 0)
             {
                 administracionDeCursosToolStripMenuItem.Enabled = true;
+
+            }
+            if (FinalesCuentas.Count() > 0)
+            {
+                finalesToolStripMenuItem.Enabled = true;
 
             }
 
@@ -186,6 +199,47 @@ namespace TRABAJO_FINAL
             CuentasForm.MdiParent = this;
             this.Size = CuentasForm.Size;
             CuentasForm.Show();
+        }
+
+        private void finalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var currentRole = RolesManager.getInstance().GetCurrentRole();
+            FinalForm finalForm = new FinalForm(currentRole);
+            finalForm.MdiParent = this;
+            this.Size = finalForm.Size;
+            finalForm.Show();
+        }
+
+        private void ponerNotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var currentRole = RolesManager.getInstance().GetCurrentRole();
+            SubirNotasForm subirNotasForm = new SubirNotasForm(currentRole);
+            subirNotasForm.MdiParent = this;
+            this.Size = subirNotasForm.Size;
+            subirNotasForm.Show();
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RolesManager.getInstance().ResetSession();
+            disableUI();
+            initLogin();
+        }
+
+        private void disableUI() {
+            alumnosToolStripMenuItem.Enabled = false;
+            cursosToolStripMenuItem.Enabled = false;
+            profesoresToolStripMenuItem.Enabled = false;
+            materiaToolStripMenuItem.Enabled = false;
+            pagosToolStripMenuItem.Enabled = false;
+            permisosToolStripMenuItem.Enabled = false;
+            finalesToolStripMenuItem.Enabled = false;
+            cuentasToolStripMenuItem.Enabled = false;
+            backupAndRestoreToolStripMenuItem.Enabled = false;
+            administracionDeCursosToolStripMenuItem.Enabled = false;
+            inscripcionCursoToolStripMenuItem.Enabled = false;
+            SubirNotaToolTip.Enabled = false;
+        
         }
     }
 }

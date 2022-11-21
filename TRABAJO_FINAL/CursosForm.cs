@@ -229,5 +229,10 @@ namespace TRABAJO_FINAL
         {
 
         }
+
+        private void MateriaCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

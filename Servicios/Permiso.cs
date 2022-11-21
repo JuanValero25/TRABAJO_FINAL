@@ -5,6 +5,7 @@ namespace Servicios
 {
     public class Permiso : Componente
     {
+        public bool enable { get; set; }
         public Permiso(string name) : base(name)
         {
         }

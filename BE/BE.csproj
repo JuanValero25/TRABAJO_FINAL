@@ -46,6 +46,7 @@
     <Compile Include="Curso.cs" />
     <Compile Include="Entidad.cs" />
     <Compile Include="Inscripcion.cs" />
+    <Compile Include="InscripcionCursoView.cs" />
     <Compile Include="Materia.cs" />
     <Compile Include="Pago.cs" />
     <Compile Include="Profesor.cs" />

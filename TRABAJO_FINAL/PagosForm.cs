@@ -63,7 +63,7 @@ namespace TRABAJO_FINAL
 
             }
 
-            var PagoList = this.pagosBLL.GetAll().Where(p => p.AlumnoDocumento.Equals(DocumentoTextBox.Text));
+            var PagoList = this.pagosBLL.GetAll().FindAll(p => p.AlumnoDocumento.Equals(DocumentoTextBox.Text));
 
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = PagoList;

@@ -1,6 +1,7 @@
 ﻿using BE;
 using BLL;
 using Servicios;
+using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -70,6 +71,9 @@ namespace TRABAJO_FINAL
 
             }
             //ca.AlumnoID + "-" + ca.CursoID
+            inscripcion.cursadaEstado = "ACTIVA";
+            inscripcion.FechaDeInscripcion = DateTime.Now;
+            inscripcion.FechaCaducidad = DateTime.Now.AddYears(3);
             inscripcion.AlumnoID = alumno.DNI;
             inscripcion.CursoID = ((Curso)CursoCombo.SelectedItem).ID;
             bll.InscribirEnCurso(inscripcion);

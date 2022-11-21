@@ -36,6 +36,7 @@ namespace TRABAJO_FINAL
             this.label2 = new System.Windows.Forms.Label();
             this.TestClientButton = new System.Windows.Forms.Button();
             this.SuperAdminButton = new System.Windows.Forms.Button();
+            this.Profesor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LogingButton
@@ -103,11 +104,22 @@ namespace TRABAJO_FINAL
             this.SuperAdminButton.UseVisualStyleBackColor = true;
             this.SuperAdminButton.Click += new System.EventHandler(this.SuperAdminButton_Click);
             // 
+            // Profesor
+            // 
+            this.Profesor.Location = new System.Drawing.Point(64, 244);
+            this.Profesor.Name = "Profesor";
+            this.Profesor.Size = new System.Drawing.Size(75, 23);
+            this.Profesor.TabIndex = 10;
+            this.Profesor.Text = "Profesor";
+            this.Profesor.UseVisualStyleBackColor = true;
+            this.Profesor.Click += new System.EventHandler(this.Profesor_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Profesor);
             this.Controls.Add(this.SuperAdminButton);
             this.Controls.Add(this.TestClientButton);
             this.Controls.Add(this.label2);
@@ -131,5 +143,6 @@ namespace TRABAJO_FINAL
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button TestClientButton;
         private System.Windows.Forms.Button SuperAdminButton;
+        private System.Windows.Forms.Button Profesor;
     }
 }

@@ -35,6 +35,16 @@ namespace MPP
 
                 MessageBox.Show("inicializando app Usuario Test Cliente");
 
+                var Profesor = new Usuario();
+                Profesor.DNI = "555222333";
+                Profesor.ID = "555222333";
+                Profesor.password = EncryptionService.EncryptString("el_profe");
+                Profesor.Role = roleManager.GetRoleByName("PROFESOR").name;
+                Save(Profesor);
+
+
+                MessageBox.Show("inicializando app Usuario Test Profesor");
+
             }
 
 

@@ -1,6 +1,7 @@
 ﻿using BE;
 using MPP;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace BLL
@@ -37,6 +38,11 @@ namespace BLL
 
         }
 
+        public void save(Inscripcion ca)
+        {
+            mpp.Save(ca);
+        }
+
         public List<Inscripcion> GetAll()
         {
 
@@ -47,6 +53,21 @@ namespace BLL
         {
             mpp.Delete(ca);
         }
+
+        public Inscripcion Get(string ID)
+        {
+
+            return mpp.Get(ID);
+
+        }
+
+
+        public List<Inscripcion> GetInscripcionPorCurso(string CursoID) {
+           return mpp.GetAll().FindAll(i => i.CursoID.Equals(CursoID));
+
+
+        }
+
 
         public Inscripcion GetInscripcionByDocumento(string documento)
         {

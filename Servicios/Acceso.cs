@@ -5,6 +5,8 @@ namespace Servicios
 {
     public class Acceso : Componente
     {
+        public bool enable { get; set; }
+
         private List<Componente> hijos = new List<Componente>();
 
         public Acceso(string name) : base(name)

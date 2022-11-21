@@ -63,7 +63,7 @@ namespace TRABAJO_FINAL
 
 
             var newProfesor = new Profesor();
-            newProfesor.ID = newProfesor.generateID();
+            newProfesor.ID = this.DniTextBox.Text;
             newProfesor.DNI = this.DniTextBox.Text;
             newProfesor.Nombre = this.NombreText.Text;
             newProfesor.Apellido = this.ApellidoText.Text;

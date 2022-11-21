@@ -112,6 +112,7 @@ namespace TRABAJO_FINAL
             // 
             // AgregarButton
             // 
+            this.AgregarButton.Enabled = false;
             this.AgregarButton.Location = new System.Drawing.Point(69, 258);
             this.AgregarButton.Name = "AgregarButton";
             this.AgregarButton.Size = new System.Drawing.Size(75, 23);
@@ -122,6 +123,7 @@ namespace TRABAJO_FINAL
             // 
             // EliminarButton
             // 
+            this.EliminarButton.Enabled = false;
             this.EliminarButton.Location = new System.Drawing.Point(233, 258);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(75, 23);
@@ -132,6 +134,7 @@ namespace TRABAJO_FINAL
             // 
             // ListarTodoButton
             // 
+            this.ListarTodoButton.Enabled = false;
             this.ListarTodoButton.Location = new System.Drawing.Point(410, 258);
             this.ListarTodoButton.Name = "ListarTodoButton";
             this.ListarTodoButton.Size = new System.Drawing.Size(75, 23);

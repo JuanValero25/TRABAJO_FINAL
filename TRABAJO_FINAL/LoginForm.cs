@@ -51,5 +51,12 @@ namespace TRABAJO_FINAL
             DniTextBox.Text = "999555111";
             PasswordTextBox.Text = "fancy_password";
         }
+
+        private void Profesor_Click(object sender, EventArgs e)
+        {
+
+            DniTextBox.Text = "555222333";
+            PasswordTextBox.Text = "el_profe";
+        }
     }
 }

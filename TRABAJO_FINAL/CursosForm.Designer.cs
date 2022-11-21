@@ -162,6 +162,7 @@ namespace TRABAJO_FINAL
             this.MateriaCombo.Name = "MateriaCombo";
             this.MateriaCombo.Size = new System.Drawing.Size(187, 21);
             this.MateriaCombo.TabIndex = 1;
+            this.MateriaCombo.SelectedIndexChanged += new System.EventHandler(this.MateriaCombo_SelectedIndexChanged);
             // 
             // NombreTextbox
             // 
