@@ -2,7 +2,7 @@
 
 namespace BE
 {
-    public class Cuota : Entidad
+    public class Cuota : Entidad, IComparable
     {
         public string Descripcion { get; set; }
         public decimal MontoPagado { get; set; }
@@ -21,6 +21,9 @@ namespace BE
 
         public int numeroDeCuota { get; set; }
 
-
+        public int CompareTo(object obj)
+        {
+            return numeroDeCuota;
+        }
     }
 }

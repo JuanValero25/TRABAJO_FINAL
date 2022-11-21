@@ -25,26 +25,32 @@ namespace TRABAJO_FINAL
             RenderTooltops();
         }
 
-        public static InitialForm getCommonInstance() {
+        public static InitialForm getCommonInstance()
+        {
             return CommonInstance;
-        } 
+        }
 
-        public void RenderTooltops() {
+        public void RenderTooltops()
+        {
 
             RolesManager roleManager = RolesManager.getInstance();
-          var currentRole =  roleManager.GetCurrentRole();
+            var currentRole = roleManager.GetCurrentRole();
             //INSCRIPCION
             var AccessosCursos = currentRole.ObtenerHijos().Where(h => h.name.Equals("CURSOS"));
             var AccessosInscripcion = currentRole.ObtenerHijos().Where(h => h.name.Equals("INSCRIPCION"));
             var AccessosPermisos = currentRole.ObtenerHijos().Where(h => h.name.Equals("PAGOS"));
             var AccessosPagos = currentRole.ObtenerHijos().Where(h => h.name.Equals("PERMISOS"));
+            var AccessosBackup = currentRole.ObtenerHijos().Where(h => h.name.Equals("PACKUP_AND_RESTORE"));
+            var AccessosCuentas = currentRole.ObtenerHijos().Where(h => h.name.Equals("CUENTAS"));
 
-            if (AccessosCursos.Count() > 0) {
+            if (AccessosCursos.Count() > 0)
+            {
                 administracionDeCursosToolStripMenuItem.Enabled = true;
-                
+
             }
 
-            if (AccessosInscripcion.Count() > 0) {
+            if (AccessosInscripcion.Count() > 0)
+            {
 
                 inscripcionCursoToolStripMenuItem.Enabled = true;
             }
@@ -61,11 +67,23 @@ namespace TRABAJO_FINAL
                 permisosToolStripMenuItem.Enabled = true;
             }
 
+            if (AccessosBackup.Count() > 0)
+            {
+
+                backupAndRestoreToolStripMenuItem.Enabled = true;
+            }
+
+            if (AccessosCuentas.Count() > 0)
+            {
+
+                cuentasToolStripMenuItem.Enabled = true;
+            }
+
         }
 
 
 
-    
+
 
         private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -149,6 +167,26 @@ namespace TRABAJO_FINAL
             this.Size = cursosForm.Size;
             cursosForm.Show();
         }
+
+        private void backupAndRestoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            var currentRole = RolesManager.getInstance().GetCurrentRole();
+            BackUpForm BackUpForm = new BackUpForm(currentRole);
+            BackUpForm.MdiParent = this;
+            this.Size = BackUpForm.Size;
+            BackUpForm.Show();
+
+        }
+
+        private void cuentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var currentRole = RolesManager.getInstance().GetCurrentRole();
+            CuentasForm CuentasForm = new CuentasForm(currentRole);
+            CuentasForm.MdiParent = this;
+            this.Size = CuentasForm.Size;
+            CuentasForm.Show();
+        }
     }
-    }
+}
 

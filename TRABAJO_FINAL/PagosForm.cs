@@ -48,7 +48,7 @@ namespace TRABAJO_FINAL
 
             var currentRole = RolesManager.getInstance().GetCurrentRole();
             PagoDeTarjetaForm pagoTarjetaForm = new PagoDeTarjetaForm(currentRole);
-            pagoTarjetaForm.MdiParent = InitialForm.getCommonInstance(); 
+            pagoTarjetaForm.MdiParent = InitialForm.getCommonInstance();
             this.Size = pagoTarjetaForm.Size;
             pagoTarjetaForm.Show();
 
@@ -56,13 +56,14 @@ namespace TRABAJO_FINAL
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (DocumentoTextBox.Text == "") {
+            if (DocumentoTextBox.Text == "")
+            {
                 MessageBox.Show("debe inserta algun documento");
                 return;
-            
+
             }
 
-            var PagoList = this.pagosBLL.GetAll().Where(p=>p.AlumnoDocumento.Equals(DocumentoTextBox.Text));
+            var PagoList = this.pagosBLL.GetAll().Where(p => p.AlumnoDocumento.Equals(DocumentoTextBox.Text));
 
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = PagoList;

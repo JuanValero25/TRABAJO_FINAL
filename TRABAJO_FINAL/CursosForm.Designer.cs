@@ -207,6 +207,11 @@ namespace TRABAJO_FINAL
             // LimiteNumber
             // 
             this.LimiteNumber.Location = new System.Drawing.Point(242, 200);
+            this.LimiteNumber.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.LimiteNumber.Name = "LimiteNumber";
             this.LimiteNumber.Size = new System.Drawing.Size(187, 20);
             this.LimiteNumber.TabIndex = 19;

@@ -97,7 +97,8 @@ namespace TRABAJO_FINAL
                 }
 
 
-                if (!ValidaFechas(InicioDate.Value, FinalizacionDate.Value)) {
+                if (!ValidaFechas(InicioDate.Value, FinalizacionDate.Value))
+                {
 
                     return;
                 }
@@ -146,23 +147,26 @@ namespace TRABAJO_FINAL
             cursoBLL.SaveCurso(newCurso);
         }
 
-        private bool ValidaFechas(DateTime fechaDeInicio, DateTime fechaDeFinalizacion) {
+        private bool ValidaFechas(DateTime fechaDeInicio, DateTime fechaDeFinalizacion)
+        {
 
-            if (fechaDeInicio == null || fechaDeFinalizacion == null) {
+            if (fechaDeInicio == null || fechaDeFinalizacion == null)
+            {
 
                 MessageBox.Show("debe selecionar alguna fecha");
                 return false;
             }
 
 
-            if (fechaDeInicio > fechaDeFinalizacion) {
+            if (fechaDeInicio > fechaDeFinalizacion)
+            {
                 MessageBox.Show("fecha de inicio debe ser menos a la fecha final");
                 return false;
             }
 
             return true;
 
-        
+
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)

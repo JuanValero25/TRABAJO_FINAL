@@ -19,8 +19,8 @@ namespace BLL
         {
 
 
-            var cuotas = GetTodasLasCuotasByDocument(DNI);
-
+            var cuotas = GetTodasLasCuotasByDocument(DNI).FindAll(c => !c.Estado.Equals("PAGADO"));
+            cuotas.Sort();
 
             var CuotasPagadas = new List<Cuota>();
             foreach (Cuota c in cuotas)
@@ -28,14 +28,15 @@ namespace BLL
 
                 if (monto > c.MontoAPagar)
                 {
-                    c.MontoPagado = c.MontoAPagar;
+                    c.MontoPagado += c.MontoAPagar;
+                    c.MontoAPagar = 0;
                     monto -= c.MontoPagado;
                     c.PagoID = pagoID;
                     c.Estado = "PAGADO";
                 }
                 else
                 {
-                    c.MontoPagado = monto;
+                    c.MontoPagado += monto;
                     c.MontoAPagar -= monto;
                     c.Estado = "PARCIAL";
                     c.PagoID = pagoID;

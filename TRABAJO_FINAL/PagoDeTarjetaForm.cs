@@ -35,31 +35,33 @@ namespace TRABAJO_FINAL
             }
         }
 
-        private bool validaCampos() {
+        private bool validaCampos()
+        {
 
             return
                DocumentoTarjeta.Text != "" &&
                NombreEnTarjetaText.Text != "" &&
                CodigoDeSeguridad.Text != "" &&
                DniAlumno.Text != "" &&
-               NumeroTarjeta.Text!= "" &&
+               NumeroTarjeta.Text != "" &&
                NumeroTarjeta.Text.Length >= 16 &&
                NumeroTarjeta.Text.Length < 19 &&
                FechaDeVencimiento.Value > DateTime.Now;
-                ;
+            ;
 
-        
-            
+
+
         }
 
 
         private void PagoButton_Click(object sender, System.EventArgs e)
         {
 
-            if (!validaCampos()) {
+            if (!validaCampos())
+            {
                 MessageBox.Show("Alguno de los Campos pueden estar vacios o mal escrito porfavor verifique");
                 return;
-                
+
             }
 
             var DNIDeEstudiante = DniAlumno.Text;

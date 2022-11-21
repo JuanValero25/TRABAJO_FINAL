@@ -34,7 +34,6 @@ namespace TRABAJO_FINAL
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.TestClientButton = new System.Windows.Forms.Button();
             this.SuperAdminButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -84,15 +83,6 @@ namespace TRABAJO_FINAL
             this.label2.TabIndex = 4;
             this.label2.Text = "password";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(287, 326);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Create Account";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // TestClientButton
             // 
             this.TestClientButton.Location = new System.Drawing.Point(64, 140);
@@ -120,7 +110,6 @@ namespace TRABAJO_FINAL
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.SuperAdminButton);
             this.Controls.Add(this.TestClientButton);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PasswordTextBox);
@@ -140,7 +129,6 @@ namespace TRABAJO_FINAL
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button TestClientButton;
         private System.Windows.Forms.Button SuperAdminButton;
     }

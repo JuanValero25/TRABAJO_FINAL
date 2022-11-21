@@ -56,6 +56,11 @@ namespace TRABAJO_FINAL
             // MontoNumber
             // 
             this.MontoNumber.Location = new System.Drawing.Point(425, 173);
+            this.MontoNumber.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
             this.MontoNumber.Name = "MontoNumber";
             this.MontoNumber.Size = new System.Drawing.Size(120, 20);
             this.MontoNumber.TabIndex = 2;

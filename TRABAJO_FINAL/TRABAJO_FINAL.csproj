@@ -52,6 +52,18 @@
     <Compile Include="AlumnoForm.Designer.cs">
       <DependentUpon>AlumnoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BackUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackUpForm.Designer.cs">
+      <DependentUpon>BackUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CuentasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CuentasForm.Designer.cs">
+      <DependentUpon>CuentasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CursosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +128,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AlumnoForm.resx">
       <DependentUpon>AlumnoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackUpForm.resx">
+      <DependentUpon>BackUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CuentasForm.resx">
+      <DependentUpon>CuentasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CursosForm.resx">
       <DependentUpon>CursosForm.cs</DependentUpon>

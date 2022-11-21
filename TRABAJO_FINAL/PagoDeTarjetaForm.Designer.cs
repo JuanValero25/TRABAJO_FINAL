@@ -126,6 +126,11 @@ namespace TRABAJO_FINAL
             // MontoApagar
             // 
             this.MontoApagar.Location = new System.Drawing.Point(281, 66);
+            this.MontoApagar.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
             this.MontoApagar.Name = "MontoApagar";
             this.MontoApagar.Size = new System.Drawing.Size(120, 20);
             this.MontoApagar.TabIndex = 11;

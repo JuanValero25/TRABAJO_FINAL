@@ -82,6 +82,14 @@ namespace Servicios
             PagosAccesoAdmin.agregarHijo(agregarYmodificar);
             PagosAccesoAdmin.agregarHijo(Listar);
 
+            var BackupAccesoAdmin = new Acceso("PACKUP_AND_RESTORE");
+            BackupAccesoAdmin.agregarHijo(agregarYmodificar);
+            BackupAccesoAdmin.agregarHijo(Listar);
+
+            var CuentasAccesoAdmin = new Acceso("CUENTAS");
+            CuentasAccesoAdmin.agregarHijo(agregarYmodificar);
+            CuentasAccesoAdmin.agregarHijo(Listar);
+
 
             // permisos para Login Admin
             var LoginAccesoAdmin = new Acceso("LOGIN");
@@ -102,6 +110,10 @@ namespace Servicios
             AdminRole.agregarHijo(PagosAccesoAdmin);
             AdminRole.agregarHijo(LoginAccesoAdmin);
             AdminRole.agregarHijo(CursosAccesoAdmin);
+            AdminRole.agregarHijo(PermisosAccesoAdmin);
+            AdminRole.agregarHijo(BackupAccesoAdmin);
+            AdminRole.agregarHijo(CuentasAccesoAdmin);
+
 
 
 
@@ -139,6 +151,12 @@ namespace Servicios
         public Role GetCurrentRole()
         {
             return this.currentRole;
+        }
+
+        public List<Role> GetAllRoles()
+        {
+
+            return this.Roles;
         }
 
         public void SetRolebyName(string roleName)

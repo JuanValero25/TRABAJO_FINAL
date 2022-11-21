@@ -26,7 +26,8 @@ namespace BLL
             pagosMapper.Save(pago);
         }
 
-        public List<Pago> GetAll() {
+        public List<Pago> GetAll()
+        {
             return pagosMapper.GetAll();
 
 

@@ -43,7 +43,7 @@ namespace TRABAJO_FINAL
         private void TestClientButton_Click(object sender, EventArgs e)
         {
             DniTextBox.Text = "999222111";
-           PasswordTextBox.Text = "1234";
+            PasswordTextBox.Text = "1234";
         }
 
         private void SuperAdminButton_Click(object sender, EventArgs e)

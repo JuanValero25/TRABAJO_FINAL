@@ -1,6 +1,8 @@
 ﻿using BE;
 using MPP;
 using Servicios;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace BLL
 {
@@ -33,6 +35,21 @@ namespace BLL
             }
             return null;
 
+        }
+
+        public void GuardarUsuario(Usuario user) {
+
+            var tempUser = mapper.Get(user.ID);
+
+            if (tempUser.ID != null) {
+                MessageBox.Show("Usuario ya existe");
+                return;
+            }
+            mapper.Save(user);
+        }
+
+        public List<Usuario> GetAllUsuarios() {
+            return mapper.GetAll();
         }
 
 

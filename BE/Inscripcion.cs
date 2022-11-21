@@ -8,5 +8,9 @@ namespace BE
         public string AlumnoID { get; set; }
         public string CursoID { get; set; }
 
+        public int notaFinal { get; set; }
+
+        public string cursadaEstado { get; set; }
+
     }
 }

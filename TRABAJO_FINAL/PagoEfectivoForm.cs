@@ -20,7 +20,8 @@ namespace TRABAJO_FINAL
 
         private void PagarButton_Click(object sender, EventArgs e)
         {
-            if (DocumentoTextBox.Text == "") {
+            if (DocumentoTextBox.Text == "")
+            {
                 MessageBox.Show("debe insertar un documento");
             }
 

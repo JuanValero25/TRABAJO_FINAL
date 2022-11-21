@@ -23,9 +23,16 @@ namespace MPP
         {
             T instance = Activator.CreateInstance<T>();
             typeName = instance.GetType().Name;
-            fileName = typeName + ".xml";
+            fileName = "./xmlDB/" + typeName + ".xml";
             Root = typeName + "s";
             Unit = typeName + "_unit";
+
+            if (!Directory.Exists("./xmlDB/"))
+            {
+
+                Directory.CreateDirectory("./xmlDB/");
+            }
+
         }
 
         public void Save(IEntidad ObjectToParse)
@@ -34,12 +41,10 @@ namespace MPP
             {
                 if (!File.Exists(fileName))
                 {
-
                     var xdoc = new XDocument();
                     var rootElement = new XElement(typeName + "s");
                     xdoc.Add(rootElement);
                     xdoc.Save(fileName);
-
                 }
 
                 var FieldSValue = new List<XElement>();
