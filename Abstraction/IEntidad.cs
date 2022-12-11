@@ -1,4 +1,4 @@
-﻿namespace Abstraction
+﻿namespace BE
 {
     public interface IEntidad
     {

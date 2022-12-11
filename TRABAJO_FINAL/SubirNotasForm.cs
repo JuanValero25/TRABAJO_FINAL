@@ -2,13 +2,9 @@
 using BLL;
 using Servicios;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TRABAJO_FINAL
@@ -76,8 +72,8 @@ namespace TRABAJO_FINAL
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             var CursoSelected = (Curso)CursoCombo.SelectedItem;
-           
-           var inscripciones = inscripcionBLL.GetInscripcionPorCurso(CursoSelected.ID);
+
+            var inscripciones = inscripcionBLL.GetInscripcionPorCurso(CursoSelected.ID);
 
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = inscripciones;
@@ -89,9 +85,10 @@ namespace TRABAJO_FINAL
 
         private void MateriaCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (DniProfesorText.Text != "") {
-               var materiaSelected =  (MateriaView)MateriaCombo.SelectedItem;
-              var cursos =  cursoBLL.GetAllByProfesorIDAndMateria(DniProfesorText.Text, materiaSelected.ID);
+            if (DniProfesorText.Text != "")
+            {
+                var materiaSelected = (MateriaView)MateriaCombo.SelectedItem;
+                var cursos = cursoBLL.GetAllByProfesorIDAndMateria(DniProfesorText.Text, materiaSelected.ID);
 
 
                 CursoCombo.Items.Clear();
@@ -115,26 +112,27 @@ namespace TRABAJO_FINAL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(inscripcionSelecionada != null)
+            if (inscripcionSelecionada != null)
             {
                 inscripcionBLL.Eliminar(inscripcionSelecionada);
                 inscripcionSelecionada.notaCursada = Decimal.ToInt32(NotaAlumno.Value);
 
-                if (NotaAlumno.Value > 4)
+                if (NotaAlumno.Value >= 4)
                 {
-
                     inscripcionSelecionada.cursadaEstado = "A_FINAL";
+                    MessageBox.Show("Inscripcion guardada con estado A_FINAL");
                 }
-                else {
-
+                else
+                {
                     inscripcionSelecionada.cursadaEstado = "A_REPARAR";
+                    MessageBox.Show("Inscripcion guardada con estado A_REPARAR");
                 }
 
                 inscripcionBLL.save(inscripcionSelecionada);
 
             }
 
-           
+
 
         }
     }

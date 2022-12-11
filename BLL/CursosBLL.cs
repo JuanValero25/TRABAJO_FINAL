@@ -8,6 +8,7 @@ namespace BLL
     {
 
         private CursosXMLMPP mpp = new CursosXMLMPP();
+        private MateriaBLL materiaBLL = new MateriaBLL();
 
         public void SaveCurso(Curso curso)
         {
@@ -32,9 +33,19 @@ namespace BLL
             mpp.Delete(curso);
         }
 
+        public string GetNombreDeMateriaByCursoID(string cursoID) {
+            var curso = Get(cursoID);
+
+            if (curso != null && curso.ID != "") {
+                return materiaBLL.Get(curso.MateriaID).Nombre;
+            }
+
+            return null;
+        }
+
         public List<Curso> GetAllByProfesorIDAndMateria(string ID, string materiaID)
         {
-            return mpp.GetAll().FindAll(c=>c.ProfesoresID.Contains(ID) && c.MateriaID.Equals(materiaID) );
+            return mpp.GetAll().FindAll(c => c.ProfesoresID.Contains(ID) && c.MateriaID.Equals(materiaID));
         }
 
 

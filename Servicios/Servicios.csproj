@@ -45,6 +45,10 @@
   <ItemGroup>
     <Compile Include="Acceso.cs" />
     <Compile Include="BackUpService.cs" />
+    <Compile Include="Bitacora.cs" />
+    <Compile Include="BitacoraXMLMPP.cs" />
+    <Compile Include="Componente.cs" />
+    <Compile Include="ComponentXMLMPP.cs" />
     <Compile Include="EncryptionService.cs" />
     <Compile Include="CardPaymentService.cs" />
     <Compile Include="Permiso.cs" />
@@ -53,6 +57,7 @@
     <Compile Include="RolesManager.cs" />
     <Compile Include="TarjetaInfo.cs" />
     <Compile Include="TarjetaMockService.cs" />
+    <Compile Include="UsuarioXMLMPP.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Abstraction\Abstraction.csproj">
@@ -63,6 +68,13 @@
       <Project>{4ED02615-2037-49D6-89F7-D62C124C8590}</Project>
       <Name>BE</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MPP\MPP.csproj">
+      <Project>{5d61fde3-2ab8-4066-a238-b0590ff5baf3}</Project>
+      <Name>MPP</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

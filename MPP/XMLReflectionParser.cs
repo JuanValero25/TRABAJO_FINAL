@@ -1,4 +1,5 @@
-﻿using Abstraction;
+﻿using BE;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,11 +14,11 @@ namespace MPP
 {
     public class XMLReflectionParser<T>
     {
-        private string typeName { get; set; }
-        private string fileName { get; set; }
-        private string Root { get; set; }
+        protected string typeName { get; set; }
+        protected string fileName { get; set; }
+        protected string Root { get; set; }
 
-        private string Unit { get; set; }
+        protected string Unit { get; set; }
 
         public XMLReflectionParser()
         {
@@ -98,11 +99,10 @@ namespace MPP
                         listaDelElementos.Add(new XElement("ID", val));
                     }
 
-                    return new XElement(fieldName, listaDelElementos.ToArray());
-                    break;
+                    return new XElement(fieldName, listaDelElementos.ToArray()); ;
                 default:
                     return new XElement(fieldName, value);
-                    break;
+
 
             }
         }
@@ -137,6 +137,7 @@ namespace MPP
             }
             catch (FileNotFoundException ex)
             {
+                Console.WriteLine(ex);
                 MessageBox.Show("no existe ningun objecto o no existe el archivo : " + fileName);
                 return Activator.CreateInstance<T>();
             }
@@ -214,6 +215,7 @@ namespace MPP
             }
             catch (FileNotFoundException ex)
             {
+                Console.WriteLine(ex);
                 MessageBox.Show("no existe ningun objecto o no existe el archivo : " + fileName);
                 return Activator.CreateInstance<List<T>>();
             }

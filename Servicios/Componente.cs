@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-
-namespace Abstraction
+﻿using BE;
+using System.Collections.Generic;
+namespace Servicios
 {
-    public abstract class Componente
+    public abstract class Componente : Entidad
     {
         public string name { get; set; }
 

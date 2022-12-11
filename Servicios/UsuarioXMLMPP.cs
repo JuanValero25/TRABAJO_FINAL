@@ -1,8 +1,8 @@
 ﻿using BE;
-using Servicios;
+using MPP;
 using System.Windows.Forms;
 
-namespace MPP
+namespace Servicios
 {
     public class UsuarioXMLMPP : XMLReflectionParser<Usuario>
     {

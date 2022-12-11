@@ -28,9 +28,11 @@ namespace BLL
 
                 if (monto > c.MontoAPagar)
                 {
+                    var montoPagarHelp = c.MontoAPagar;
+
                     c.MontoPagado += c.MontoAPagar;
                     c.MontoAPagar = 0;
-                    monto -= c.MontoPagado;
+                    monto -= montoPagarHelp;
                     c.PagoID = pagoID;
                     c.Estado = "PAGADO";
                 }

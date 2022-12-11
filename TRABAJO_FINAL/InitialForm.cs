@@ -18,10 +18,7 @@ namespace TRABAJO_FINAL
 
         public void EnableMenuToolTips()
         {
-            alumnosToolStripMenuItem.Enabled = true;
-            cursosToolStripMenuItem.Enabled = true;
-            profesoresToolStripMenuItem.Enabled = true;
-            materiaToolStripMenuItem.Enabled = true;
+
             RenderTooltops();
         }
 
@@ -36,14 +33,48 @@ namespace TRABAJO_FINAL
             RolesManager roleManager = RolesManager.getInstance();
             var currentRole = roleManager.GetCurrentRole();
             //INSCRIPCION
+            var AlumnoCursos = currentRole.ObtenerHijos().Where(h => h.name.Equals("ALUMNOS"));
+            var ProfesoresCursos = currentRole.ObtenerHijos().Where(h => h.name.Equals("PROFESORES"));
+            var FinalesCursos = currentRole.ObtenerHijos().Where(h => h.name.Equals("FINALES"));
+            var MateriasCursos = currentRole.ObtenerHijos().Where(h => h.name.Equals("MATERIAS"));
+
+
             var AccessosCursos = currentRole.ObtenerHijos().Where(h => h.name.Equals("CURSOS"));
             var AccessosInscripcion = currentRole.ObtenerHijos().Where(h => h.name.Equals("INSCRIPCION"));
             var AccessosPermisos = currentRole.ObtenerHijos().Where(h => h.name.Equals("PAGOS"));
             var AccessosPagos = currentRole.ObtenerHijos().Where(h => h.name.Equals("PERMISOS"));
-            var AccessosBackup = currentRole.ObtenerHijos().Where(h => h.name.Equals("PACKUP_AND_RESTORE"));
+            var AccessosBackup = currentRole.ObtenerHijos().Where(h => h.name.Equals("BACKUP_AND_RESTORE"));
             var AccessosCuentas = currentRole.ObtenerHijos().Where(h => h.name.Equals("CUENTAS"));
             var FinalesCuentas = currentRole.ObtenerHijos().Where(h => h.name.Equals("FINALES"));
             var SubirCuentas = currentRole.ObtenerHijos().Where(h => h.name.Equals("SUBIR_NOTAS"));
+
+
+
+
+            if (AlumnoCursos.Count() > 0)
+            {
+                 alumnosToolStripMenuItem.Enabled = true;
+
+            }
+
+            if (ProfesoresCursos.Count() > 0)
+            {
+                profesoresToolStripMenuItem.Enabled = true;
+
+            }
+
+            if (FinalesCursos.Count() > 0)
+            {
+                finalesToolStripMenuItem.Enabled = true;
+
+            }
+
+            if (MateriasCursos.Count() > 0)
+            {
+                materiaToolStripMenuItem.Enabled = true;
+
+            }
+
 
             if (SubirCuentas.Count() > 0)
             {
@@ -51,10 +82,11 @@ namespace TRABAJO_FINAL
 
             }
 
+
             if (AccessosCursos.Count() > 0)
             {
                 administracionDeCursosToolStripMenuItem.Enabled = true;
-
+                cursosToolStripMenuItem.Enabled = true;
             }
             if (FinalesCuentas.Count() > 0)
             {
@@ -226,7 +258,8 @@ namespace TRABAJO_FINAL
             initLogin();
         }
 
-        private void disableUI() {
+        private void disableUI()
+        {
             alumnosToolStripMenuItem.Enabled = false;
             cursosToolStripMenuItem.Enabled = false;
             profesoresToolStripMenuItem.Enabled = false;
@@ -239,7 +272,16 @@ namespace TRABAJO_FINAL
             administracionDeCursosToolStripMenuItem.Enabled = false;
             inscripcionCursoToolStripMenuItem.Enabled = false;
             SubirNotaToolTip.Enabled = false;
-        
+
+        }
+
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            DashBoardForm dashboardForm = new DashBoardForm();
+            dashboardForm.MdiParent = this;
+            this.Size = dashboardForm.Size;
+            dashboardForm.Show();
         }
     }
 }

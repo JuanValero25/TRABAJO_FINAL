@@ -66,5 +66,10 @@ namespace TRABAJO_FINAL
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.DarkOrange;
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

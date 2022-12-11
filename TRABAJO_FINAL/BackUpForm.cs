@@ -1,5 +1,6 @@
 ﻿using Servicios;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace TRABAJO_FINAL
@@ -11,12 +12,14 @@ namespace TRABAJO_FINAL
         public BackUpForm(Role role)
         {
             InitializeComponent();
+            renderBictacora();
         }
 
         private void BackupButton_Click(object sender, EventArgs e)
         {
 
             bk.CreateBackup();
+            renderBictacora();
 
         }
 
@@ -26,9 +29,24 @@ namespace TRABAJO_FINAL
 
             if (dialogResult == DialogResult.OK)
             {
-                bk.RestereBackup(openFileDialog1.FileName);
-                MessageBox.Show("backup completo");
+                bk.RestoreBackup(openFileDialog1.FileName);
+                renderBictacora();
             }
+
+        }
+
+        private void renderBictacora() {
+
+            var usuariList = this.bk.GetAll();
+
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = usuariList;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.DarkOrange;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

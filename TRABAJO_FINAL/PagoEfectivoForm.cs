@@ -27,6 +27,13 @@ namespace TRABAJO_FINAL
 
             var alumno = alumnoBLL.GetAlumnoPorDni(DocumentoTextBox.Text);
 
+
+            if (alumno == null) {
+                MessageBox.Show("Alumno no existe");
+                return;
+
+            }
+
             var newPago = new Pago
             {
                 monto = MontoNumber.Value,

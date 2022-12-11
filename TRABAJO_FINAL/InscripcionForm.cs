@@ -59,28 +59,32 @@ namespace TRABAJO_FINAL
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-
-            var inscripcion = new Inscripcion();
-
-            var alumno = alumnoBll.getAlumno(DniTextBox.Text);
-
-            if (alumno.DNI == null)
+            try
             {
-                MessageBox.Show("Alumno no existe");
-                return;
+                var inscripcion = new Inscripcion();
 
+                var alumno = alumnoBll.getAlumno(DniTextBox.Text);
+
+                if (alumno.DNI == null)
+                {
+                    MessageBox.Show("Alumno no existe");
+                    return;
+
+                }
+                //ca.AlumnoID + "-" + ca.CursoID
+                inscripcion.cursadaEstado = "ACTIVA";
+                inscripcion.FechaDeInscripcion = DateTime.Now;
+                inscripcion.FechaCaducidad = DateTime.Now.AddYears(3);
+                inscripcion.AlumnoID = alumno.DNI;
+                inscripcion.CursoID = ((Curso)CursoCombo.SelectedItem).ID;
+                bll.InscribirEnCurso(inscripcion);
+
+                cuotaBLL.GenerarCuotas(alumno.DNI, alumno.DNI + "-" + inscripcion.CursoID);
             }
-            //ca.AlumnoID + "-" + ca.CursoID
-            inscripcion.cursadaEstado = "ACTIVA";
-            inscripcion.FechaDeInscripcion = DateTime.Now;
-            inscripcion.FechaCaducidad = DateTime.Now.AddYears(3);
-            inscripcion.AlumnoID = alumno.DNI;
-            inscripcion.CursoID = ((Curso)CursoCombo.SelectedItem).ID;
-            bll.InscribirEnCurso(inscripcion);
+            catch (Exception ex) {
 
-            cuotaBLL.GenerarCuotas(alumno.DNI, alumno.DNI + "-" + inscripcion.CursoID);
-
-
+                MessageBox.Show("ya esta inscrito en este curso");
+            }
 
         }
 

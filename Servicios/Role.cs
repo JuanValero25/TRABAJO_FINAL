@@ -1,5 +1,4 @@
-﻿using Abstraction;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Servicios
 {
@@ -8,6 +7,10 @@ namespace Servicios
         private List<Componente> hijos = new List<Componente>();
 
         public Role(string name) : base(name)
+        {
+        }
+
+        public Role()
         {
         }
 

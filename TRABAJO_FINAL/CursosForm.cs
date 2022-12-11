@@ -122,12 +122,11 @@ namespace TRABAJO_FINAL
 
             var newEnumerator = ProfesorList.CheckedItems.GetEnumerator();
 
-            if (cursoSelecionado.ProfesoresID == null)
-            {
-                cursoSelecionado.ProfesoresID = new List<string>();
+            if (newCurso.ProfesoresID == null) {
+                newCurso.ProfesoresID = new List<string>();
+
 
             }
-
 
             while (newEnumerator.MoveNext())
             {
@@ -201,6 +200,22 @@ namespace TRABAJO_FINAL
             this.cursoSelecionado = (Curso)DataGrid.CurrentRow.DataBoundItem;
             AgregarButton.Text = "Salvar Modificacion";
             NombreTextbox.Text = this.cursoSelecionado.Nombre;
+
+
+            if (this.cursoSelecionado.fechaInicio < InicioDate.MinDate ) {
+                InicioDate.MinDate = this.cursoSelecionado.fechaInicio.AddDays(-1);
+
+
+            }
+
+            if (this.cursoSelecionado.fechaFinalizacion < FinalizacionDate.MinDate)
+            {
+                FinalizacionDate.MinDate = this.cursoSelecionado.fechaFinalizacion.AddDays(-1);
+
+
+            }
+
+
             InicioDate.Value = this.cursoSelecionado.fechaInicio;
             FinalizacionDate.Value = this.cursoSelecionado.fechaFinalizacion;
             MateriaCombo.SelectedItem = materiaBLL.Get(cursoSelecionado.MateriaID);
@@ -214,12 +229,13 @@ namespace TRABAJO_FINAL
             var counter = 0;
             while (empEnumerator.MoveNext())
             {
-                counter++;
+               
                 var emp = (ProfesorView)empEnumerator.Current;
                 if (this.cursoSelecionado.ProfesoresID.Select(id => id.Equals(emp.ID)).ToList().Count > 0)
                 {
                     ProfesorList.SetItemChecked(counter, true);
                 };
+                counter++;
             }
 
 
@@ -231,6 +247,11 @@ namespace TRABAJO_FINAL
         }
 
         private void MateriaCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InicioDate_ValueChanged(object sender, EventArgs e)
         {
 
         }

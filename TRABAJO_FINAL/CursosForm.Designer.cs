@@ -60,6 +60,7 @@ namespace TRABAJO_FINAL
             this.InicioDate.Name = "InicioDate";
             this.InicioDate.Size = new System.Drawing.Size(200, 20);
             this.InicioDate.TabIndex = 2;
+            this.InicioDate.ValueChanged += new System.EventHandler(this.InicioDate_ValueChanged);
             // 
             // FinalizacionDate
             // 
@@ -192,9 +193,19 @@ namespace TRABAJO_FINAL
             // PrecioNumber
             // 
             this.PrecioNumber.Location = new System.Drawing.Point(458, 182);
+            this.PrecioNumber.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.PrecioNumber.Name = "PrecioNumber";
             this.PrecioNumber.Size = new System.Drawing.Size(200, 20);
             this.PrecioNumber.TabIndex = 16;
+            this.PrecioNumber.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // label8
             // 

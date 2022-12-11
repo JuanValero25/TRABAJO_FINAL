@@ -34,6 +34,7 @@ namespace TRABAJO_FINAL
             this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administracionDeCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inscripcionCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SubirNotaToolTip = new System.Windows.Forms.ToolStripMenuItem();
             this.profesoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,8 +42,8 @@ namespace TRABAJO_FINAL
             this.finalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupAndRestoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SubirNotaToolTip = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,10 +59,11 @@ namespace TRABAJO_FINAL
             this.finalesToolStripMenuItem,
             this.cuentasToolStripMenuItem,
             this.backupAndRestoreToolStripMenuItem,
-            this.logOutToolStripMenuItem});
+            this.logOutToolStripMenuItem,
+            this.dashboardToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(848, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -100,6 +102,14 @@ namespace TRABAJO_FINAL
             this.inscripcionCursoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.inscripcionCursoToolStripMenuItem.Text = "Inscripcion curso";
             this.inscripcionCursoToolStripMenuItem.Click += new System.EventHandler(this.inscripcionCursoToolStripMenuItem_Click);
+            // 
+            // SubirNotaToolTip
+            // 
+            this.SubirNotaToolTip.Enabled = false;
+            this.SubirNotaToolTip.Name = "SubirNotaToolTip";
+            this.SubirNotaToolTip.Size = new System.Drawing.Size(208, 22);
+            this.SubirNotaToolTip.Text = "Subir notas";
+            this.SubirNotaToolTip.Click += new System.EventHandler(this.ponerNotasToolStripMenuItem_Click);
             // 
             // profesoresToolStripMenuItem
             // 
@@ -157,14 +167,6 @@ namespace TRABAJO_FINAL
             this.backupAndRestoreToolStripMenuItem.Text = "Backup and Restore";
             this.backupAndRestoreToolStripMenuItem.Click += new System.EventHandler(this.backupAndRestoreToolStripMenuItem_Click);
             // 
-            // SubirNotaToolTip
-            // 
-            this.SubirNotaToolTip.Enabled = false;
-            this.SubirNotaToolTip.Name = "SubirNotaToolTip";
-            this.SubirNotaToolTip.Size = new System.Drawing.Size(208, 22);
-            this.SubirNotaToolTip.Text = "Subir notas";
-            this.SubirNotaToolTip.Click += new System.EventHandler(this.ponerNotasToolStripMenuItem_Click);
-            // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
@@ -172,11 +174,18 @@ namespace TRABAJO_FINAL
             this.logOutToolStripMenuItem.Text = "LogOut";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
+            // dashboardToolStripMenuItem
+            // 
+            this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.dashboardToolStripMenuItem.Text = "dashboard";
+            this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
+            // 
             // InitialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(848, 474);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -206,6 +215,7 @@ namespace TRABAJO_FINAL
         private System.Windows.Forms.ToolStripMenuItem finalesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SubirNotaToolTip;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
     }
 }
 

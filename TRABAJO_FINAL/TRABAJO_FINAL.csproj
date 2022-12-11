@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,6 +70,12 @@
     </Compile>
     <Compile Include="CursosForm.Designer.cs">
       <DependentUpon>CursosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoardForm.Designer.cs">
+      <DependentUpon>DashBoardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FinalForm.cs">
       <SubType>Form</SubType>
@@ -150,6 +157,9 @@
     <EmbeddedResource Include="CursosForm.resx">
       <DependentUpon>CursosForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DashBoardForm.resx">
+      <DependentUpon>DashBoardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FinalForm.resx">
       <DependentUpon>FinalForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +227,10 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{9cd20745-7446-4abd-9502-5fcac4921143}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MPP\MPP.csproj">
+      <Project>{5D61FDE3-2AB8-4066-A238-B0590FF5BAF3}</Project>
+      <Name>MPP</Name>
     </ProjectReference>
     <ProjectReference Include="..\Servicios\Servicios.csproj">
       <Project>{8A9228DF-6A95-4870-A3D0-7F795F25C0D3}</Project>
