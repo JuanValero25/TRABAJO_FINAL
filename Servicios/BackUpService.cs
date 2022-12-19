@@ -32,6 +32,7 @@ namespace Servicios
         public void RestoreBackup(string fileDir)
         {
 
+            Dictionary<string, Bitacora> bitacoraMap = new Dictionary<string, Bitacora>();
 
           var bitacoras =  bitcacoraMapper.GetAll();
             var bitacora = new Bitacora();
@@ -39,6 +40,11 @@ namespace Servicios
             bitacora.Operacion = "RESTORE";
             bitacora.fechaOperacion = DateTime.Now;
             bitacoras.Add(bitacora);
+
+            foreach (var oldBitacora in bitacoras) {
+                bitacoraMap.Add(oldBitacora.ID, oldBitacora);
+            }
+
 
             if (Directory.Exists("./xmlDB/"))
             {
@@ -48,13 +54,22 @@ namespace Servicios
 
             ZipFile.ExtractToDirectory(fileDir, startPath);
 
+            var bitacoras2 = bitcacoraMapper.GetAll();
+
+            foreach (var oldBitacora in bitacoras2)
+            {
+                if (!bitacoraMap.ContainsKey(oldBitacora.ID)) {
+                    bitacoraMap.Add(oldBitacora.ID, oldBitacora);
+                }
+            }
+
             if (File.Exists("./xmlDB/Bitacora.xml"))
             {
                 File.Delete("./xmlDB/Bitacora.xml");
             }
 
-            foreach (var bita in bitacoras) {
-                bitcacoraMapper.Save(bita);
+            foreach (var bita in bitacoraMap) {
+                bitcacoraMapper.Save(bita.Value);
             }
 
 

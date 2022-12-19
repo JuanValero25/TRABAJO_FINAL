@@ -96,7 +96,7 @@ namespace TRABAJO_FINAL
 
             CuotaBLl.pagarCuotasDeAlumno(DNIDeEstudiante, MontoApagar.Value, pago.ID);
 
-
+            MessageBox.Show("Pago exitoso");
 
         }
     }

@@ -47,7 +47,7 @@ namespace TRABAJO_FINAL
 
             CuotaBLl.pagarCuotasDeAlumno(DocumentoTextBox.Text, MontoNumber.Value, newPago.ID);
 
-
+            MessageBox.Show("Pago exitoso");
         }
     }
 }

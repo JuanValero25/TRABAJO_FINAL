@@ -128,7 +128,7 @@ namespace TRABAJO_FINAL
         {
             if (InscripcionSelecionado != null)
             {
-
+                bll.Eliminar(InscripcionSelecionado);
             }
 
         }

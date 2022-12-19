@@ -44,6 +44,7 @@ namespace TRABAJO_FINAL
             this.backupAndRestoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,10 +61,11 @@ namespace TRABAJO_FINAL
             this.cuentasToolStripMenuItem,
             this.backupAndRestoreToolStripMenuItem,
             this.logOutToolStripMenuItem,
-            this.dashboardToolStripMenuItem});
+            this.dashboardToolStripMenuItem,
+            this.userviewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(848, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1097, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -181,11 +183,18 @@ namespace TRABAJO_FINAL
             this.dashboardToolStripMenuItem.Text = "dashboard";
             this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
+            // userviewToolStripMenuItem
+            // 
+            this.userviewToolStripMenuItem.Name = "userviewToolStripMenuItem";
+            this.userviewToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.userviewToolStripMenuItem.Text = "userview";
+            this.userviewToolStripMenuItem.Click += new System.EventHandler(this.userviewToolStripMenuItem_Click);
+            // 
             // InitialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(848, 474);
+            this.ClientSize = new System.Drawing.Size(1097, 526);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -216,6 +225,7 @@ namespace TRABAJO_FINAL
         private System.Windows.Forms.ToolStripMenuItem SubirNotaToolTip;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem userviewToolStripMenuItem;
     }
 }
 

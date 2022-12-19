@@ -283,6 +283,16 @@ namespace TRABAJO_FINAL
             this.Size = dashboardForm.Size;
             dashboardForm.Show();
         }
+
+        private void userviewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+ 
+
+            UserViewForm userViewForm = new UserViewForm();
+            userViewForm.MdiParent = this;
+            this.Size = userViewForm.Size;
+            userViewForm.Show();
+        }
     }
 }
 

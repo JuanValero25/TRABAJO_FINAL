@@ -167,7 +167,7 @@ namespace TRABAJO_FINAL
             this.BurcarPorDNIButton.Name = "BurcarPorDNIButton";
             this.BurcarPorDNIButton.Size = new System.Drawing.Size(109, 23);
             this.BurcarPorDNIButton.TabIndex = 14;
-            this.BurcarPorDNIButton.Text = "Buscar Por DNI";
+            this.BurcarPorDNIButton.Text = "Buscar todos";
             this.BurcarPorDNIButton.UseVisualStyleBackColor = true;
             this.BurcarPorDNIButton.Click += new System.EventHandler(this.BurcarPorDNIButton_Click);
             // 
